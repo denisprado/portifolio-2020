@@ -15,7 +15,7 @@ const AnimatedContainer = posed.div({
     },
   },
   exit: {
-    y: '-100%',
+    y: '0%',
     transition: {
       ease: 'easeInOut',
     },

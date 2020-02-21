@@ -1,7 +1,23 @@
 {
   "title": "Home",
   "content": "intro.md",
-  "gallery": [{
+  "gallery": [
+  {
+    "title": "Poliana Lima Website",
+    "copy": "Website para Poliana Lima",
+    "image": "../images/gallery/poliana-lima.png"
+  },
+  {
+    "title": "Page Transitions",
+    "copy": "Component-based for easy usage.",
+    "image": "../images/gallery/page-transitions.jpg"
+  },
+  {
+    "title": "Intersection Observer",
+    "copy": "Including a polyfill for Safari.",
+    "image": "../images/gallery/intersection-observer.jpg"
+  },
+  {
     "title": "React Context",
     "copy": "For global styles.",
     "image": "../images/gallery/react-context.jpg"
@@ -15,5 +31,6 @@
     "title": "Intersection Observer",
     "copy": "Including a polyfill for Safari.",
     "image": "../images/gallery/intersection-observer.jpg"
-  }]
+  }
+]
 }

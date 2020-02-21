@@ -1,21 +1,3 @@
-Find the repository [on GitHub](https://github.com/fabe/gatsby-universal).
+[Curriculum](https://resume.io/app/resumes/5185779/edit).
 
-```
-# Installation
-gatsby new my-site https://github.com/fabe/gatsby-universal
-
-# To develop
-yarn develop
-
-# To build
-yarn build
-
-# To test SSR (for Lighthouse etc.)
-yarn ssr
-
-# To format JS (precommit)
-yarn format
-
-# To generate favicons (included in `build`)
-yarn build:favicons
-```
+Sou designer gráfico e desenvolvedor web desde 2004 e já atuei em diversas áreas criando projetos visuais para campanhas, eventos, livros e revistas. Já criei identidades visuais e materiais institucionais, cartazes para filmes e websites institucionais. 
