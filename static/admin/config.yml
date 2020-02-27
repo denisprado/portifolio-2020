@@ -1,5 +1,5 @@
 backend:
-  name: denis-portifolio
+  name: denisforigo
   repo: denisprado/portifolio-denis-2019
 media_folder: static/assets
 public_folder: assets
