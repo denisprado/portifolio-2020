@@ -1,0 +1,16 @@
+backend:
+  name: denis-portifolio
+  repo: denisprado/portifolio-denis-2019
+media_folder: static/assets
+public_folder: assets
+collections:
+  - name: work
+    label: Work
+    folder: work
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: datetime }
+      - { name: title, label: Title }
+      - { name: body, label: Body, widget: markdown }
+      - { name: thumb, label: Thumb, widget: image }

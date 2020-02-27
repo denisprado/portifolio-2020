@@ -11,6 +11,7 @@ module.exports = {
     'gatsby-transformer-json',
     'gatsby-transformer-remark',
     'gatsby-plugin-netlify',
+    'gatsby-plugin-netlify-cms',
     'gatsby-plugin-eslint',
     {
       resolve: 'gatsby-source-filesystem',
