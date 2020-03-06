@@ -3,13 +3,7 @@ import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import { Link } from 'gatsby';
 
-import {
-  Title,
-  Copy,
-  Container,
-  ContainerText,
-  BackgroundImage,
-} from './item.css';
+import { Title, Copy, Container, ContainerText } from './item.css';
 
 const Item = ({ title, copy, image }) => (
   <Container>

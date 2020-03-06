@@ -3,13 +3,12 @@ import MEDIA from 'helpers/mediaTemplates';
 
 export const Container = styled.div`
   display: flex;
+  flex-wrap: nowrap;
   align-items: stretch;
-  padding: 0 0rem;
-  margin: 0rem 0;
   height: 100vh;
-  overflow: auto;
-  white-space: nowrap;
-
+  width: 100%;
+  &::-webkit-scrollbar {
+  }
   ${MEDIA.TABLET`
     display: block;
   `};

@@ -1,23 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Layout from 'components/layout';
-import Box from 'components/box';
-import Container from 'components/container';
-import Title from 'components/title';
 import Gallery from 'components/gallery';
-import Modal from 'containers/modal';
+import Layout from 'components/layout';
 import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
+import ScrollingHorizontally from 'components/horizontalscroll';
 
 const Index = ({ data }) => (
   <Layout>
-    <Container>
-      <Box>
-        <Title as="h2" size="large">
-          {data.homeJson.content.childMarkdownRemark.rawMarkdownBody}
-        </Title>
-      </Box>
+    <ScrollingHorizontally>
       <Gallery items={data.homeJson.gallery} />
-    </Container>
+    </ScrollingHorizontally>
   </Layout>
 );
 

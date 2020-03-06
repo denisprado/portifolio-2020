@@ -10,7 +10,7 @@ export const Container = styled.header`
   left: 0;
   right: 0;
   a {
-    color: #757575;
+    color: white;
     transition: color 0.2s ease;
     text-decoration: none;
 

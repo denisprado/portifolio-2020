@@ -91,4 +91,8 @@ export default createGlobalStyle`
   p {
     margin-bottom: 2rem;
   }
+
+  h1 {
+    margin: 500px 0 50px;
+  }
 `;

@@ -2,10 +2,8 @@ import styled from 'styled-components';
 import MEDIA from 'helpers/mediaTemplates';
 
 export const Container = styled.div`
-  flex-basis: 3;
-  flex-shrink: 3;
-  flex-grow: 3;
-  min-width: 33vw;
+  flex: 0 0 auto;
+  min-width: 30vw;
   position: relative;
   border: 1px solid #fff;
 `;
