@@ -5,7 +5,7 @@ import Box from 'components/box';
 import Container from 'components/container';
 import Title from 'components/title';
 import Gallery from 'components/gallery';
-import Modal from 'containers/modal';
+
 import { graphql } from 'gatsby';
 
 const Index = ({ data }) => (
@@ -22,7 +22,7 @@ const Index = ({ data }) => (
 );
 
 Index.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.object,
 };
 
 export default Index;
@@ -38,8 +38,10 @@ export const query = graphql`
         }
       }
       gallery {
+        id
         title
-        copy
+        text
+        client
         image {
           childImageSharp {
             fluid(maxHeight: 500, quality: 90) {

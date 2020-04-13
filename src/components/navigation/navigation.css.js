@@ -7,8 +7,10 @@ export const Container = styled.header`
   padding: 5rem 6rem;
   position: fixed;
   z-index: 1;
-  left: 0;
+  background: blue;
   right: 0;
+  bottom: 2rem;
+  color: white;
   a {
     color: #757575;
     transition: color 0.2s ease;

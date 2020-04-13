@@ -1,41 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Img from 'gatsby-image';
+import Title from 'components/title';
+import Text from 'components/text';
 import { Link } from 'gatsby';
-
 import {
-  Title,
-  Copy,
+  GalleryTitle,
+  GalleryText,
   Container,
   ContainerText,
-  BackgroundImage,
 } from './item.css';
 
-const Item = ({ title, copy, image }) => (
-  <Container>
-    <Link to="/about">
-      <figure>
-        <Img
-          fluid={image ? image.childImageSharp.fluid : {}}
-          alt={title}
-          objectFit="cover"
-          style={{ position: 'unset', width: '33vw' }}
-        />
-
-        <ContainerText>
-          <figcaption>
-            <Title>{title}</Title>
-            <Copy>{copy}</Copy>
-          </figcaption>
-        </ContainerText>
-      </figure>
+const Item = ({ title, text, client, image, active, setActive }) => (
+  <Container image={image.childImageSharp.fluid} isActive={active}>
+    <Link onClick={setActive} activeClassName={'active'} to="/about">
+      <ContainerText>
+        <GalleryTitle>
+          <Title size={'large'}>{title}</Title>
+        </GalleryTitle>
+        <GalleryText>
+          <Text size={'large'}>{text}</Text>
+        </GalleryText>
+        <div>
+          <Text>{client}</Text>
+        </div>
+      </ContainerText>
     </Link>
   </Container>
 );
 
 Item.propTypes = {
   title: PropTypes.string,
-  copy: PropTypes.string,
+  client: PropTypes.string,
+  text: PropTypes.string,
+  active: PropTypes.bool,
+  setActive: PropTypes.func,
   image: PropTypes.object.isRequired,
 };
 

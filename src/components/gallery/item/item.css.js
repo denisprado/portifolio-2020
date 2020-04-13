@@ -6,37 +6,41 @@ export const Container = styled.div`
   flex-shrink: 3;
   flex-grow: 3;
   min-width: 33vw;
+  width: 33vw;
   position: relative;
-  border: 1px solid #fff;
+  background-image: url(${(props) => props.image && props.image.src});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  & a.active {
+    animation: all 5s ease-in-out;
+    width: 100vw;
+  }
 `;
 
 export const ContainerText = styled.div`
-  left: 4rem;
-  right: 2rem;
+  white-space: normal;
   position: absolute;
-  bottom: 16rem;
-`;
-
-export const BackgroundImage = styled.span`
-  right: 0;
-  left: 0;
-  bottom: 0;
-  top: 0;
-  object-fit: cover;
-`;
-
-export const Title = styled.span`
   display: block;
-  font-size: 2rem;
-  font-weight: 500;
-  margin: 2rem 2rem 1rem;
+  left: 0;
+  top: 50vh;
+  padding: 17vh 5rem;
+  width: 100%;
+  height: auto;
+  color: #fff;
 `;
 
-export const Copy = styled.p`
-  color: #757575;
-  margin: 0 2rem 2rem;
+export const GalleryTitle = styled.div``;
 
-  ${MEDIA.TABLET`
-    margin-bottom: 4rem;
-  `};
+export const GalleryText = styled.div`
+  overflow-y: hidden;
+  max-width: 400px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  height: 0px;
+  transition: 0.75s height ease-out;
+  ${Container}:hover & {
+    height: 80px;
+    transition: 0.75s height cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
 `;

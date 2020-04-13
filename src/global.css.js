@@ -46,6 +46,7 @@ export default createGlobalStyle`
     -webkit-font-feature-settings: "pnum";
     font-feature-settings: "pnum";
     font-variant-numeric: proportional-nums;
+    overflow:hidden;
   }
 
   ol, ul {
@@ -91,4 +92,22 @@ export default createGlobalStyle`
   p {
     margin-bottom: 2rem;
   }
+
+  .example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
 `;

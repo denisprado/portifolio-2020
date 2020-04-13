@@ -3,34 +3,41 @@
   "content": "intro.md",
   "gallery": [
   {
+    "id":0,
     "title": "Poliana Lima Website",
-    "copy": "Website para Poliana Lima",
-    "image": "../images/gallery/poliana-lima.png"
+    "text": "Poliana Lima (Brasil, 1983) es coreógrafa, bailarina y docente, afincada en Madrid.",
+    "client": "Poliana Lima",
+    "image": "../images/gallery/poliana.png"
   },
   {
-    "title": "Page Transitions",
-    "copy": "Component-based for easy usage.",
-    "image": "../images/gallery/page-transitions.jpg"
+    "id":1,
+    "title": "Noche",
+    "text": "Poster for the film \"Noche\" (Night), by Alexis Delgado Búrdalo    ",
+    "image": "../images/gallery/noche.jpg"
   },
   {
-    "title": "Intersection Observer",
-    "copy": "Including a polyfill for Safari.",
-    "image": "../images/gallery/intersection-observer.jpg"
+    "id":2,
+    "title": "Joahnn Sebastian Jazz",
+    "text": "Including a polyfill for Safari.",
+    "image": "../images/gallery/johann.jpg"
   },
   {
-    "title": "React Context",
-    "copy": "For global styles.",
-    "image": "../images/gallery/react-context.jpg"
+    "id":3,
+    "title": "VGTU Posters",
+    "text": "Component-based for easy usage.",
+    "image": "../images/gallery/vgtu.jpg"
   },
   {
-    "title": "Page Transitions",
-    "copy": "Component-based for easy usage.",
-    "image": "../images/gallery/page-transitions.jpg"
+    "id":4,
+    "title": "Sesc",
+    "text": "Including a polyfill for Safari.",
+    "image": "../images/gallery/sesc.jpg"
   },
   {
-    "title": "Intersection Observer",
-    "copy": "Including a polyfill for Safari.",
-    "image": "../images/gallery/intersection-observer.jpg"
+    "id":5,
+    "title": "IEL Unicamp",
+    "text": "For global styles.",
+    "image": "../images/gallery/iel.jpg"
   }
 ]
 }

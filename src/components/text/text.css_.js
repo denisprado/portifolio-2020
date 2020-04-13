@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import MEDIA from 'helpers/mediaTemplates';
 
-export const Text = styled.span`
+export const TextContainer = styled.p`
   display: block;
   color: white;
-  margin-bottom: 1rem;
+  line-height: 1.2;
+
   font-weight: ${({ size }) => () => {
     switch (size) {
       case 'large':
@@ -13,17 +14,17 @@ export const Text = styled.span`
         return '900';
     }
   }};
+
   font-size: ${({ size }) => () => {
     switch (size) {
       case 'large':
-        return '3.2rem';
-      default:
         return '2rem';
+      default:
+        return '1.6rem';
     }
   }};
-  line-height: 1.2;
 
-  ${MEDIA.TABLET`
+  ${MEDIA.PHONE`
     font-size: ${({ size }) => () => {
       switch (size) {
         case 'large':
