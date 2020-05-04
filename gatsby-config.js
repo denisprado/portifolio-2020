@@ -21,6 +21,15 @@ module.exports = {
         path: `${__dirname}/content`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        typekit: {
+          id: 'xoi7mxq',
+          families: ['Neue Haas Grotesk Display'],
+        },
+      },
+    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-webpack-size',

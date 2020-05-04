@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { accent } from 'constants/theme';
+import { accent, primary } from 'constants/theme';
 
 export default createGlobalStyle`
   html, body, div, span, applet, object, iframe,
@@ -21,6 +21,7 @@ export default createGlobalStyle`
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+    box-sizing:border-box;
   }
 
   /* HTML5 display-role reset for older browsers */
@@ -34,11 +35,10 @@ export default createGlobalStyle`
   }
 
   body {
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-family: neue-haas-grotesk-display, sans-serif;
     line-height: 1;
     font-size: 1.6rem;
-    color: #000;
-    background-color: #fff;
+    color: ${primary};
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -68,10 +68,6 @@ export default createGlobalStyle`
     border-spacing: 0;
   }
 
-  a {
-    color: ${accent};
-  }
-
   pre {
     display: block;
     padding: 2rem;
@@ -87,10 +83,6 @@ export default createGlobalStyle`
 
   video {
     max-width: 100%;
-  }
-
-  p {
-    margin-bottom: 2rem;
   }
 
   .example-enter {

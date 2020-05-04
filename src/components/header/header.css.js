@@ -2,10 +2,11 @@ import styled from 'styled-components';
 
 export const Container = styled.header`
   display: flex;
+  position: fixed;
+  background-color: #ccc;
   justify-content: space-between;
   align-items: center;
   padding: 5rem 6rem;
-  position: fixed;
   z-index: 1;
   left: 0;
   right: 0;

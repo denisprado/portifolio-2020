@@ -4,40 +4,33 @@
   "gallery": [
   {
     "id":0,
-    "title": "Poliana Lima Website",
-    "text": "Poliana Lima (Brasil, 1983) es coreógrafa, bailarina y docente, afincada en Madrid.",
-    "client": "Poliana Lima",
-    "image": "../images/gallery/poliana.png"
+    "title": "IEL Unicamp",
+    "text": "Logotipo vencedor para Identidade Visual do IEL Unicamp.",
+    "image": "../images/gallery/iel-thumb.jpg"
   },
   {
     "id":1,
-    "title": "Noche",
-    "text": "Poster for the film \"Noche\" (Night), by Alexis Delgado Búrdalo    ",
-    "image": "../images/gallery/noche.jpg"
+    "title": "Poliana Lima Website",
+    "text": "Poliana Lima (Brasil, 1983) es coreógrafa, bailarina y docente, afincada en Madrid.",
+    "image": "../images/gallery/poliana.jpg"
   },
   {
     "id":2,
-    "title": "Joahnn Sebastian Jazz",
-    "text": "Including a polyfill for Safari.",
-    "image": "../images/gallery/johann.jpg"
+    "title": "Noche",
+    "text": "Poster for the film \"Noche\" (Night), by Alexis Delgado Búrdalo    ",
+    "image": "../images/gallery/noche-thumb.jpg"
   },
   {
     "id":3,
-    "title": "VGTU Posters",
+    "title": "VGTU Works",
     "text": "Component-based for easy usage.",
-    "image": "../images/gallery/vgtu.jpg"
+    "image": "../images/gallery/vgtu-thumb.jpg"
   },
   {
     "id":4,
-    "title": "Sesc",
+    "title": "Tykhe",
     "text": "Including a polyfill for Safari.",
-    "image": "../images/gallery/sesc.jpg"
-  },
-  {
-    "id":5,
-    "title": "IEL Unicamp",
-    "text": "For global styles.",
-    "image": "../images/gallery/iel.jpg"
+    "image": "../images/gallery/tykhe.jpg"
   }
 ]
 }
