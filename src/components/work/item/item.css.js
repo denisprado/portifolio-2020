@@ -35,18 +35,30 @@ export const ContainerText = styled.div`
   overflow: hidden;
   padding-right: 5%;
   padding-top: 10px;
+  position: relative;
 `;
 
-export const GalleryTitle = styled.div``;
+export const GalleryTitle = styled.div`
+  position: absolute;
+  ${Container}:hover & {
+    display: none;
+    height: 0px;
+    transition: 0.75s height cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+`;
 
 export const GalleryText = styled.div`
   overflow-y: hidden;
-  max-width: 400px;
-  transform: matrix(1, 0, 0, 1, 0, 0);
-  height: 0px;
+  position: absolute;
+
+  background-color: whitesmoke;
+  width: 100%;
+  height: 75px;
+  display: none;
   transition: 0.75s height ease-out;
   ${Container}:hover & {
-    height: 80px;
-    transition: 0.75s height cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: block;
+    float: left;
+    transition: 0.75s all cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 `;

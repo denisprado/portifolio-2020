@@ -18,12 +18,12 @@ const Item = ({ title, text, client, image, featured }) => (
       <Img fluid={image.childImageSharp.fluid} style={{ width: '100%' }}></Img>
     </ContainerImage>
     <ContainerText>
-      <GalleryTitle>
-        <Title>{title}</Title>
-      </GalleryTitle>
       <GalleryText>
         <Text>{text}</Text>
       </GalleryText>
+      <GalleryTitle>
+        <Title>{title}</Title>
+      </GalleryTitle>
     </ContainerText>
   </Container>
 );

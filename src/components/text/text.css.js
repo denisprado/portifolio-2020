@@ -2,16 +2,19 @@ import styled from 'styled-components';
 import MEDIA from 'helpers/mediaTemplates';
 
 export const TextContainer = styled.p`
-  color: white;
-  line-height: 1.6;
+  line-height: 2.5rem;
   margin-bottom: 1rem;
-
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  max-height: 2.8em;
   font-weight: ${({ size }) => () => {
     switch (size) {
       case 'large':
         return '500';
       default:
-        return '900';
+        return '500';
     }
   }};
 
@@ -20,7 +23,7 @@ export const TextContainer = styled.p`
       case 'large':
         return '2rem';
       default:
-        return '1.6rem';
+        return '1.9rem';
     }
   }};
 
