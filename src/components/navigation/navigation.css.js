@@ -1,15 +1,18 @@
 import styled from 'styled-components';
 
-export const HeaderContainer = styled.header`
+export const Container = styled.header`
   display: flex;
-  position: absolute;
   justify-content: space-between;
   align-items: center;
-  padding: 2.4rem 5rem;
+  padding: 5rem 6rem;
+  position: fixed;
   z-index: 1;
-
+  background: blue;
+  right: 0;
+  bottom: 2rem;
+  color: white;
   a {
-    color: white;
+    color: #757575;
     transition: color 0.2s ease;
     text-decoration: none;
 

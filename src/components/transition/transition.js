@@ -9,13 +9,13 @@ class Transition extends PureComponent {
 
     const RoutesContainer = posed.div({
       enter: { opacity: 1, delay: timeout, delayChildren: timeout },
-      exit: { opacity: 0 },
+      exit: { opacity: 1 },
     });
 
     // To enable page transitions on mount / initial load,
     // use the prop `animateOnMount={true}` on `PoseGroup`.
     return (
-      <PoseGroup>
+      <PoseGroup animateOnMount={true}>
         <RoutesContainer key={location.pathname}>{children}</RoutesContainer>
       </PoseGroup>
     );

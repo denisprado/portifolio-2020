@@ -11,13 +11,23 @@ module.exports = {
     'gatsby-transformer-json',
     'gatsby-transformer-remark',
     'gatsby-plugin-netlify',
-    'gatsby-plugin-netlify-cms',
     'gatsby-plugin-eslint',
+    'gatsby-plugin-transition-link',
+    'gatsby-plugin-pointer-events',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'content',
         path: `${__dirname}/content`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        typekit: {
+          id: 'xoi7mxq',
+          families: ['Neue Haas Grotesk Display'],
+        },
       },
     },
     'gatsby-plugin-sharp',

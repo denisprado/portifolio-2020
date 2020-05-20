@@ -9,6 +9,8 @@ class AppProvider extends Component {
     open: false,
     showModal: () => this.setState({ open: true }),
     hideModal: () => this.setState({ open: false }),
+    active: false,
+    setActive: () => this.setState({ active: true }),
   };
 
   render() {

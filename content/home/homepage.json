@@ -3,34 +3,64 @@
   "content": "intro.md",
   "gallery": [
   {
+    "id":0,
+    "title": "IEL Unicamp",
+    "text": "Logotipo vencedor para Identidade Visual do IEL Unicamp.",
+    "image": "../images/gallery/iel-thumb.jpg"
+  },
+  {
+    "id":1,
     "title": "Poliana Lima Website",
-    "copy": "Website para Poliana Lima",
-    "image": "../images/gallery/poliana-lima.png"
+    "text": "Poliana Lima (Brasil, 1983) es coreógrafa, bailarina y docente, afincada en Madrid.",
+    "image": "../images/gallery/poliana.jpg"
   },
   {
-    "title": "Page Transitions",
-    "copy": "Component-based for easy usage.",
-    "image": "../images/gallery/page-transitions.jpg"
+    "id":2,
+    "title": "Noche",
+    "text": "Poster for the film \"Noche\" (Night), by Alexis Delgado Búrdalo    ",
+    "image": "../images/gallery/noche-thumb.jpg"
   },
   {
-    "title": "Intersection Observer",
-    "copy": "Including a polyfill for Safari.",
-    "image": "../images/gallery/intersection-observer.jpg"
+    "id":3,
+    "title": "VGTU Works",
+    "text": "Component-based for easy usage.",
+    "image": "../images/gallery/vgtu-thumb.jpg"
   },
   {
-    "title": "React Context",
-    "copy": "For global styles.",
-    "image": "../images/gallery/react-context.jpg"
+    "id":4,
+    "title": "Tykhe",
+    "text": "Including a polyfill for Safari.",
+    "image": "../images/gallery/tykhe.jpg"
   },
   {
-    "title": "Page Transitions",
-    "copy": "Component-based for easy usage.",
-    "image": "../images/gallery/page-transitions.jpg"
+    "id":5,
+    "title": "Cena aberta",
+    "text": "Logotipo vencedor para o site Cena aberta.",
+    "image": "../images/gallery/cena-aberta.jpg"
   },
   {
-    "title": "Intersection Observer",
-    "copy": "Including a polyfill for Safari.",
-    "image": "../images/gallery/intersection-observer.jpg"
+    "id":6,
+    "title": "Pssiu!",
+    "text": "Diagramação de Livro infantil de Jeff Vasques.",
+    "image": "../images/gallery/pssiu.jpg"
+  },
+  {
+    "id":7,
+    "title": "VGTU Posters",
+    "text": "Posters para a VGTU",
+    "image": "../images/gallery/vgtu-posters.jpg"
+  },
+  {
+    "id":8,
+    "title": "this Film Is About Me",
+    "text": "Diagramação de Dosier para o documentário This Film is About Me de Alexis Delgado",
+    "image": "../images/gallery/this-film.jpg"
+  },
+  {
+    "id":9,
+    "title": "Palo en La Rueda",
+    "text": "Cartaz para um dos primeiros espetáculos de Poliana Lima.",
+    "image": "../images/gallery/palo.jpg"
   }
 ]
 }

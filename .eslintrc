@@ -7,11 +7,14 @@
   "rules": {
     "strict": 0,
     "no-console": "warn",
+    "linebreak-style":"off",
     "quotes": [
       "warn",
       "single"
     ],
-    "prettier/prettier": "warn",
+    "prettier/prettier": ["off", {}, {
+      "usePrettierrc": false
+    }],
     "react/prop-types": "warn",
     "no-unused-vars": "warn"
   },

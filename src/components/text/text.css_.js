@@ -1,32 +1,30 @@
 import styled from 'styled-components';
 import MEDIA from 'helpers/mediaTemplates';
 
-export const Text = styled.h4`
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  max-height: 2.8em;
+export const TextContainer = styled.p`
+  display: block;
+  color: white;
+  line-height: 1.2;
 
   font-weight: ${({ size }) => () => {
     switch (size) {
       case 'large':
         return '500';
       default:
-        return '400';
+        return '900';
     }
   }};
+
   font-size: ${({ size }) => () => {
     switch (size) {
       case 'large':
-        return '3.2rem';
+        return '2rem';
       default:
-        return '1.9rem';
+        return '1.6rem';
     }
   }};
-  line-height: 2.5rem;
 
-  ${MEDIA.TABLET`
+  ${MEDIA.PHONE`
     font-size: ${({ size }) => () => {
       switch (size) {
         case 'large':

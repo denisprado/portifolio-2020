@@ -1,20 +1,20 @@
-import Gallery from 'components/gallery';
+import Container from 'components/container';
 import Layout from 'components/layout';
+import Work from 'components/work';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
-import ScrollingHorizontally from 'components/horizontalscroll';
 
 const Index = ({ data }) => (
   <Layout>
-    <ScrollingHorizontally>
-      <Gallery items={data.homeJson.gallery} />
-    </ScrollingHorizontally>
+    <Container>
+      <Work items={data.homeJson.gallery} />
+    </Container>
   </Layout>
 );
 
 Index.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.object,
 };
 
 export default Index;
@@ -30,11 +30,12 @@ export const query = graphql`
         }
       }
       gallery {
+        id
         title
-        copy
+        text
         image {
           childImageSharp {
-            fluid(maxHeight: 500, quality: 90) {
+            fluid(quality: 100) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
