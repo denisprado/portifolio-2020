@@ -15,7 +15,7 @@ export const Container = styled.div`
   ${MEDIA.MIN_DESKTOP`
     min-height: ${(props) => (props.featured ? '432px' : '100px')};
     width: ${(props) => (props.featured ? 'calc((((100vw - 320px)/ 12) * 6) + 100px)' : 'calc((((100vw - 320px)/ 12) * 3) + 40px);')};
-    // border:1px solid red;
+    border: 1px solid red;
   `}
   ${MEDIA.MIN_LARGE`
     min-height: ${(props) => (props.featured ? '600px' : '300px')};
@@ -27,11 +27,10 @@ export const Container = styled.div`
 `;
 
 export const ContainerImage = styled.div`
+  min-height: ${({ featured }) => featured && 'calc(100% - 75px)'};
   flex-wrap: wrap;
   display: flex;
   overflow: hidden;
-  position: relative;
-  display: block;
   padding-bottom: 0;
 `;
 

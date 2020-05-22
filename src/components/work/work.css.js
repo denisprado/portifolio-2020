@@ -40,6 +40,7 @@ export const ItemContainer = styled.article`
   width: ${({ featured }) => (featured ? '740px' : '760px')};
   ${MEDIA.MIN_DESKTOP`
     width: ${({ featured }) => (featured ? 'calc((((100vw - 320px)/ 12) * 6) + 100px)' : 'calc(((((100vw - 320px)/ 12) * 6) + 100px) + 20px)')};
+    height:100%;
   `}
   ${MEDIA.MIN_TABLET`
   width: ${({ featured }) => (featured ? 'calc((((100vw - 320px)/ 12) * 6) + 100px)' : 'calc(((((100vw - 320px)/ 12) * 6) + 100px) + 20px)')};

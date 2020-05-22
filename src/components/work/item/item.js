@@ -1,21 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Title from 'components/title';
 import Text from 'components/text';
-import { Link } from 'gatsby';
+import Title from 'components/title';
 import Img from 'gatsby-image';
-import {
-  GalleryTitle,
-  GalleryText,
-  Container,
-  ContainerText,
-  ContainerImage,
-} from './item.css';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { Container, ContainerImage, ContainerText, GalleryText, GalleryTitle } from './item.css';
 
-const Item = ({ title, text, client, image, featured }) => (
+const Item = ({ title, text, image, featured }) => (
   <Container featured={featured}>
-    <ContainerImage>
-      <Img fluid={image.childImageSharp.fluid} style={{ width: '100%' }}></Img>
+    <ContainerImage featured={featured}>
+      <Img fluid={image.childImageSharp.fluid} style={{ width: '100%' }} objectFit="cover"></Img>
     </ContainerImage>
     <ContainerText>
       <GalleryText>
