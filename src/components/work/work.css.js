@@ -13,12 +13,14 @@ export const HomeWork = styled.div`
 
 export const Container = styled.div`
   width: auto;
-  padding-right: 5rem;
-  padding-left: 5rem;
+  padding-right: 4rem;
+  padding-left: 4rem;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   ${MEDIA.MIN_LARGE`
+    padding-right: 5rem;
+    padding-left: 5rem;
     width: 1600px;
   `}
 `;
@@ -38,6 +40,9 @@ export const ContainerWork = styled.div`
 
 export const ItemContainer = styled.article`
   width: ${({ featured }) => (featured ? '740px' : '760px')};
+  margin-left: ${({ right, featured }) => right ? '20px' : featured ? '40px' : '0px'};
+  display: flex;
+  flex-wrap: wrap;
   ${MEDIA.MIN_DESKTOP`
     width: ${({ featured }) => (featured ? 'calc((((100vw - 320px)/ 12) * 6) + 100px)' : 'calc(((((100vw - 320px)/ 12) * 6) + 100px) + 20px)')};
     height:100%;
@@ -48,9 +53,6 @@ export const ItemContainer = styled.article`
   ${MEDIA.MIN_PHONE`
   width: ${({ featured }) => (featured ? 'calc((((100vw - 320px)/ 12) * 6) + 100px)' : 'calc(((((100vw - 320px)/ 12) * 6) + 100px) + 20px)')};
   `}
-  margin-left: ${({ right, featured }) => right ? '20px' : featured ? '40px' : '0px'};
-  display: flex;
-  flex-wrap: wrap;
 `;
 
 export const GalButtons = styled.div`
