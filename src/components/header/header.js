@@ -9,11 +9,9 @@ import { HeaderContainer } from './header.css'
 const Header = ({ title }) => (
   <Container>
     <HeaderContainer>
-
       <Link to="/">
         <Title as="h1">{title}</Title>
       </Link>
-
       <Nav />
     </HeaderContainer>
   </Container>

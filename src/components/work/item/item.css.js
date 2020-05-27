@@ -7,6 +7,9 @@ export const Container = styled.div`
   float: left;
   overflow: hidden;
   width: ${(props) => (props.featured ? '740px' : '360px')};
+  ${MEDIA.PHONE`
+    width: 90%;
+  `}
   ${MEDIA.MIN_TABLET`
     width: calc((((100vw - 300px)/ 12) * 6) + 100px);
     // border: 1px solid blue;

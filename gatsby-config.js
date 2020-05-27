@@ -26,7 +26,7 @@ module.exports = {
       options: {
         typekit: {
           id: 'xoi7mxq',
-          families: ['Neue Haas Grotesk Display'],
+          families: ['Proxima Nova'],
         },
       },
     },

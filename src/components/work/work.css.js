@@ -9,10 +9,6 @@ export const HomeWork = styled.div`
   position: relative;
   z-index: 1;
   overflow: hidden;
-`;
-
-export const Container = styled.div`
-  width: auto;
   padding-right: 4rem;
   padding-left: 4rem;
   display: flex;
@@ -21,7 +17,6 @@ export const Container = styled.div`
   ${MEDIA.MIN_LARGE`
     padding-right: 5rem;
     padding-left: 5rem;
-    width: 1600px;
   `}
 `;
 

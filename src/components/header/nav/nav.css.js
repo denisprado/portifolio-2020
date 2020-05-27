@@ -8,10 +8,12 @@ export const Container = styled.nav`
 
     li {
       text-transform: uppercase;
-      font-size: 1.3rem;
-
+      font-size: 2.2rem;
+      font-variant: normal;
+      font-feature-settings: 'smcp';
+      letter-spacing: .5px;
       & + li {
-        margin-left: 2rem;
+        margin-left: 3.5rem;
       }
     }
   }

@@ -1,4 +1,3 @@
-import Container from 'components/container';
 import Layout from 'components/layout';
 import Work from 'components/work';
 import { graphql } from 'gatsby';
@@ -7,9 +6,7 @@ import React from 'react';
 
 const Index = ({ data }) => (
   <Layout>
-    <Container>
-      <Work items={data.homeJson.gallery} />
-    </Container>
+    <Work items={data.homeJson.gallery} />
   </Layout>
 );
 
@@ -34,6 +31,13 @@ export const query = graphql`
         title
         text
         image {
+          childImageSharp {
+            fluid(quality: 100) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+        slide {
           childImageSharp {
             fluid(quality: 100) {
               ...GatsbyImageSharpFluid_withWebp

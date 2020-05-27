@@ -7,13 +7,14 @@ export const Text = styled.h4`
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   max-height: 2.8em;
+  line-height: 2.5rem;
 
   font-weight: ${({ size }) => () => {
     switch (size) {
       case 'large':
         return '500';
       default:
-        return '400';
+        return '500';
     }
   }};
   font-size: ${({ size }) => () => {
@@ -24,7 +25,6 @@ export const Text = styled.h4`
         return '1.9rem';
     }
   }};
-  line-height: 2.5rem;
 
   ${MEDIA.TABLET`
     font-size: ${({ size }) => () => {

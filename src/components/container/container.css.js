@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import MEDIA from 'helpers/mediaTemplates';
+import BREAKPOINTS from 'constants/breakpoints'
 
 export const ContainerLayout = styled.div`
-  display: block;
-  width: 1600px;
+  position: relative;
+  width: ${({ full }) => full ? 'auto' : BREAKPOINTS.LARGE + 'px'};
   margin: 0rem auto;
 `;

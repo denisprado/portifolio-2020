@@ -35,7 +35,7 @@ export default createGlobalStyle`
   }
 
   body {
-    font-family: neue-haas-grotesk-display, sans-serif;
+    font-family: 'proxima-nova', sans-serif;
     line-height: 1;
     font-size: 1.6rem;
     color: ${primary};

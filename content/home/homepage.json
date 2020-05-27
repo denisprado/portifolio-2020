@@ -6,7 +6,8 @@
     "id":0,
     "title": "IEL Unicamp",
     "text": "Logotipo vencedor para Identidade Visual do IEL Unicamp.",
-    "image": "../images/gallery/iel-thumb.jpg"
+    "image": "../images/gallery/iel-thumb.jpg",
+    "slide": "../images/gallery/iel-slide.jpg"
   },
   {
     "id":1,
@@ -18,7 +19,8 @@
     "id":2,
     "title": "Noche",
     "text": "Poster for the film \"Noche\" (Night), by Alexis Delgado Búrdalo    ",
-    "image": "../images/gallery/noche-thumb.jpg"
+    "image": "../images/gallery/noche-thumb.jpg",
+    "slide": "../images/gallery/noche-thumb.jpg"
   },
   {
     "id":3,
@@ -30,19 +32,22 @@
     "id":4,
     "title": "Tykhe",
     "text": "Including a polyfill for Safari.",
-    "image": "../images/gallery/tykhe.jpg"
+    "image": "../images/gallery/tykhe.jpg",
+    "slide": "../images/gallery/tykhe.jpg"
   },
   {
     "id":5,
     "title": "Cena aberta",
     "text": "Logotipo vencedor para o site Cena aberta.",
-    "image": "../images/gallery/cena-aberta.jpg"
+    "image": "../images/gallery/cena-aberta.jpg",
+    "slide": "../images/gallery/cena-aberta.jpg"
   },
   {
     "id":6,
     "title": "Pssiu!",
     "text": "Diagramação de Livro infantil de Jeff Vasques.",
-    "image": "../images/gallery/pssiu.jpg"
+    "image": "../images/gallery/pssiu.jpg",
+    "slide": "../images/gallery/pssiu.jpg"
   },
   {
     "id":7,

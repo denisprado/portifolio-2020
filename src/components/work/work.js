@@ -1,40 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import Container from 'components/container';
+import Slider from 'components/slider';
 import Item from 'components/work/item';
-import { ItemContainer, Container, HomeWork, ContainerWork, ContainerWorkRow } from './work.css';
-import { chunk } from 'lodash';
 import BREAKPOINTS from 'constants/breakpoints';
+import useWindowDimensions from 'helpers/useWindowDimensions';
+import { chunk } from 'lodash';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { ContainerWork, ContainerWorkRow, HomeWork, ItemContainer } from './work.css';
 
-function getWindowDimensions() {
-  const { innerWidth: width, innerHeight: height } = window;
-  return {
-    width,
-    height
-  };
-}
-
-export function useWindowDimensions() {
-  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
-
-  useEffect(() => {
-    function handleResize() {
-      setWindowDimensions(getWindowDimensions());
-    }
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  return windowDimensions;
-}
 
 const Work = ({ items }) => {
 
   // Groupded Itens
-
-  const featuredItems = items.filter((item) => item.id % 5 == 0);
-  const regularItems = items.filter((item) => item.id % 5 != 0);
-  const chunkItems = chunk(regularItems, 4);
 
   function arrayIntersect(array1, array2) {
     var arr_join = [],
@@ -48,40 +25,46 @@ const Work = ({ items }) => {
     return arr[0];
   }
 
+  const featuredItems = items.filter((item) => item.id % 5 == 0);
+  const regularItems = items.filter((item) => item.id % 5 != 0);
+  const chunkItems = chunk(regularItems, 4);
   const groupedItems = arrayIntersect(featuredItems, chunkItems);
   const rowItems = chunk(groupedItems, 2);
-
   const { width } = useWindowDimensions();
+
+  const slideItems = items.filter(item => item.slide && item.slide).map(item => (item.slide.childImageSharp.fluid.src))
   return (
+    <>
+      <Slider slides={slideItems} autoPlay={1.5} />
+      <Container full={false}>
+        <HomeWork>
+          {width >= BREAKPOINTS['DESKTOP'] ? (
+            rowItems.map((row, r) => (
+              <ContainerWorkRow key={r} right={r % 2 === 0 && true}>
+                {row.map((item, i) => (
+                  <ContainerWork key={i} right={r % 2 === 0 && true}>
+                    <ItemContainer featured={i === 0 && true} right={r % 2 === 0 && true} >
+                      {i === 0 ?
+                        <Item {...item} featured={true} />
+                        :
+                        item.map((rItem, i) => (
+                          <Item {...rItem} featured={false} key={i} />
+                        ))}
+                    </ItemContainer>
+                  </ContainerWork>
+                ))}
+              </ContainerWorkRow>
 
-    <HomeWork>
-      <Container>
-        {width >= BREAKPOINTS['DESKTOP'] ? (
-          rowItems.map((row, r) => (
-            <ContainerWorkRow key={r} right={r % 2 === 0 && true}>
-              {row.map((item, i) => (
-                <ContainerWork key={i} right={r % 2 === 0 && true}>
-                  <ItemContainer featured={i === 0 && true} right={r % 2 === 0 && true} >
-                    {i === 0 ?
-                      <Item {...item} featured={true} />
-                      :
-                      item.map((rItem, i) => (
-                        <Item {...rItem} featured={false} key={i} />
-                      ))}
-                  </ItemContainer>
-                </ContainerWork>
-              ))}
-            </ContainerWorkRow>
-
-          ))) : (
-            items.map((item, i) => (
-              <ItemContainer key={i} >
-                <Item {...item} />
-              </ItemContainer>
-            ))
-          )}
+            ))) : (
+              items.map((item, i) => (
+                <ItemContainer key={i} >
+                  <Item {...item} />
+                </ItemContainer>
+              ))
+            )}
+        </HomeWork >
       </Container>
-    </HomeWork >
+    </>
   )
 };
 
