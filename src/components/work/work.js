@@ -1,5 +1,5 @@
 import Container from 'components/container';
-import Slider from '../slider';
+import Slider from 'components/slider';
 import Item from 'components/work/item';
 import BREAKPOINTS from 'constants/breakpoints';
 import useWindowDimensions from 'helpers/useWindowDimensions';
