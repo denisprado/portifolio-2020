@@ -27,7 +27,7 @@ const Arrow = ({ direction, handleClick }) => (
         height: 50px;
         width: 50px;
         &:focus {
-          outline: none;
+          outline: 0;
           
         }
       }

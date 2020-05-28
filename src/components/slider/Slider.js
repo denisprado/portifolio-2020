@@ -6,7 +6,7 @@ import Dots from './Dots'
 import Slide from './Slide'
 import SliderContent from './SliderContent'
 
-const getWidth = () => window.innerWidth
+const getWidth = () => typeof window !== 'undefined' ? window.innerWidth : null;
 
 /**
  * @function Slider
