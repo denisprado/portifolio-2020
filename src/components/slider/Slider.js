@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Arrow from './Arrow'
 import Dots from './Dots'
 import Slide from './Slide'
@@ -8,10 +8,7 @@ import SliderContent from './SliderContent'
 
 const getWidth = () => typeof window !== 'undefined' ? window.innerWidth : null;
 
-/**
- * @function Slider
- */
-const Slider = props => {
+const Slider = (props) => {
   const { slides } = props
 
   const firstSlide = slides[0]
@@ -141,4 +138,4 @@ const SliderCSS = css`
   white-space: nowrap;
 `
 
-export default Slider
+export default Slider;
