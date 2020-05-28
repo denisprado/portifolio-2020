@@ -13,7 +13,6 @@ module.exports = {
     'gatsby-plugin-netlify',
     'gatsby-plugin-eslint',
     'gatsby-plugin-transition-link',
-    'gatsby-plugin-pointer-events',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
