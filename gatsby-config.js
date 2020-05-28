@@ -32,6 +32,7 @@ module.exports = {
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-netlify-cms',
     'gatsby-plugin-webpack-size',
     {
       resolve: 'gatsby-plugin-react-svg',

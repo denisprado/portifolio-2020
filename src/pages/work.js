@@ -1,23 +1,17 @@
 import Layout from 'components/layout';
-import Work from 'components/work';
 import { graphql } from 'gatsby';
-import PropTypes from 'prop-types';
 import React from 'react';
 
-const Index = ({ data }) => (
-  <Layout>
-    <Work items={data.homeJson.gallery} />
-  </Layout>
-);
+const WorkPage = ({ data }) => {
+    <Layout>
+        {data.title}
+    </Layout>
+}
 
-Index.propTypes = {
-  data: PropTypes.object,
-};
-
-export default Index;
+export default WorkPage;
 
 export const query = graphql`
-  query HomepageQuery {
+  query WorkpageQuery {
     homeJson {
       title
       content {
