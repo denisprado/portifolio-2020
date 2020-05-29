@@ -24,16 +24,16 @@ collections:
         name: "client"
         widget: "relation"
         collection: "client"
-        searchFields: ["title", "text"]
+        searchFields: ["title"]
         valueField: "title"
-        displayFields: ["Title"]
+        displayFields: ["title"]
       - label: "Discipline Type"
         name: "discipline"
         widget: "relation"
         collection: "discipline"
-        searchFields: ["title", "text"]
+        searchFields: ["title"]
         valueField: "title"
-        displayFields: ["Title"]
+        displayFields: ["title"]
   - name: "discipline"
     label: "Discipline"
     folder: "content/discipline"
