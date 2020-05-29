@@ -12,19 +12,45 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     widget: "object"
-    preview: false
+    preview: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Description", name: "text", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
-      - label: "Gallery"
-        name: "gallery"
-        widget: "list"
-        summary: "{{fields.quote}} - {{fields.author.name}}"
-        fields:
-          - { label: Image, name: image, widget: image }
-          - label: Slide
-            name: slide
-            widget: boolean
-            default: false
+      - { label: Image, name: image, widget: image }
+      - { label: Slide, name: slide, widget: image }
+      - label: "Client Type"
+        name: "client"
+        widget: "relation"
+        collection: "client"
+        searchFields: ["title", "text"]
+        valueField: "id"
+        displayFields: ["Title"]
+      - label: "Discipline Type"
+        name: "discipline"
+        widget: "relation"
+        collection: "discipline"
+        searchFields: ["title", "text"]
+        valueField: "id"
+        displayFields: ["Title"]
+  - name: "discipline"
+    label: "Discipline"
+    folder: "content/discipline"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    widget: "object"
+    preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "text", widget: "string" }
+  - name: "client"
+    label: "Type of Client"
+    folder: "content/client"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    widget: "object"
+    preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "text", widget: "string" }
