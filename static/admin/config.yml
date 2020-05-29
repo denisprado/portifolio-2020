@@ -25,20 +25,20 @@ collections:
         widget: "relation"
         collection: "client"
         searchFields: ["title", "text"]
-        valueField: "id"
+        valueField: "title"
         displayFields: ["Title"]
       - label: "Discipline Type"
         name: "discipline"
         widget: "relation"
         collection: "discipline"
         searchFields: ["title", "text"]
-        valueField: "id"
+        valueField: "title"
         displayFields: ["Title"]
   - name: "discipline"
     label: "Discipline"
     folder: "content/discipline"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     widget: "object"
     preview: true
     fields:
