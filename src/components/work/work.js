@@ -5,7 +5,7 @@ import useWindowDimensions from 'helpers/useWindowDimensions';
 import { chunk } from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
-import Slider from '../slider';
+import Slider from 'components/slider';
 import { ContainerWork, ContainerWorkRow, HomeWork, ItemContainer } from './work.css';
 
 
