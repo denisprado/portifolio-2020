@@ -1,10 +1,11 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
-import React, { useEffect, useRef, useState } from 'react'
-import Arrow from './Arrow'
-import Dots from './Dots'
-import Slide from './Slide'
-import SliderContent from './SliderContent'
+import { jsx } from '@emotion/core';
+import { useEffect, useRef, useState } from 'react';
+import Arrow from 'components/slider/arrow';
+import Dots from 'components/slider/dots';
+import Slide from 'components/slider/slide';
+import SlideContainer from './slider.css';
+import SliderContent from 'components/slider/sliderContent';
 
 const getWidth = () => typeof window !== 'undefined' ? window.innerWidth : null;
 
@@ -110,7 +111,7 @@ const Slider = props => {
     })
 
   return (
-    <div css={SliderCSS}>
+    <SlideContainer>
       <SliderContent
         translate={translate}
         transition={transition}
@@ -125,17 +126,8 @@ const Slider = props => {
       <Arrow direction="right" handleClick={nextSlide} />
 
       <Dots slides={slides} activeSlide={activeSlide} />
-    </div>
+    </SlideContainer>
   )
 }
-
-const SliderCSS = css`
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  margin: 0 auto;
-  overflow: hidden;
-  white-space: nowrap;
-`
 
 export default Slider;
