@@ -8,7 +8,7 @@ import SliderContent from './SliderContent'
 
 const getWidth = () => typeof window !== 'undefined' ? window.innerWidth : null;
 
-const Slider = (props) => {
+const Slider = props => {
   const { slides } = props
 
   const firstSlide = slides[0]
