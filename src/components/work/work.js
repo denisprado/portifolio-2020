@@ -1,11 +1,11 @@
 import Container from 'components/container';
-import Slider from 'components/slider';
 import Item from 'components/work/item';
 import BREAKPOINTS from 'constants/breakpoints';
 import useWindowDimensions from 'helpers/useWindowDimensions';
 import { chunk } from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
+//import Slider from 'components/slider';
 import { ContainerWork, ContainerWorkRow, HomeWork, ItemContainer } from './work.css';
 
 
@@ -35,7 +35,6 @@ const Work = ({ items }) => {
   const slideItems = items.filter(item => item.slide && item.slide).map(item => (item.slide.childImageSharp.fluid.src))
   return (
     <>
-      <Slider slides={slideItems} autoPlay={1.5} />
       <Container full={false}>
         <HomeWork>
           {width >= BREAKPOINTS['DESKTOP'] ? (
