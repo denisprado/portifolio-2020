@@ -24,8 +24,8 @@ const Work = ({ items }) => {
     return arr[0];
   }
 
-  const featuredItems = items.filter((item) => item.id % 5 == 0);
-  const regularItems = items.filter((item) => item.id % 5 != 0);
+  const featuredItems = items.filter((item, i) => i % 5 == 0);
+  const regularItems = items.filter((item, i) => i % 5 != 0);
   const chunkItems = chunk(regularItems, 4);
   const groupedItems = arrayIntersect(featuredItems, chunkItems);
   const rowItems = chunk(groupedItems, 2);

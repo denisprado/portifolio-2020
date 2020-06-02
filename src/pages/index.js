@@ -4,11 +4,13 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const Index = ({ data }) => (
-  <Layout>
-    <Work items={data.homeJson.gallery} />
-  </Layout>
-);
+const Index = ({ data }) => {
+  // const ComponentName = <pre style={{ color: 'black' }}>{JSON.stringify(data, null, 4)}</pre>
+  return (
+    <Layout>
+    </Layout>
+  )
+};
 
 Index.propTypes = {
   data: PropTypes.object,
@@ -16,35 +18,3 @@ Index.propTypes = {
 
 export default Index;
 
-export const query = graphql`
-  query HomepageQuery {
-    homeJson {
-      title
-      content {
-        childMarkdownRemark {
-          html
-          rawMarkdownBody
-        }
-      }
-      gallery {
-        id
-        title
-        text
-        image {
-          childImageSharp {
-            fluid(quality: 100) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-        slide {
-          childImageSharp {
-            fluid(quality: 100, maxWidth: 2000) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-      }
-    }
-  }
-`;
