@@ -9,7 +9,7 @@ import { ContainerWork, ContainerWorkRow, HomeWork, ItemContainer } from './work
 
 
 const Work = ({ items }) => {
-
+  console.log(items)
   // Groupded Itens
 
   function arrayIntersect(array1, array2) {
@@ -31,7 +31,7 @@ const Work = ({ items }) => {
   const rowItems = chunk(groupedItems, 2);
   const { width } = useWindowDimensions();
 
-  const slideItems = items.filter(item => item.slide && item.slide).map(item => (item.slide.childImageSharp.fluid.src))
+  const slideItems = items.filter(item => item.slide && item.slide).map(item => (item.frontmatter.slide.childImageSharp.fluid.src))
   return (
     <>
       <Container full={false}>

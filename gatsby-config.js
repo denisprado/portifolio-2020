@@ -31,13 +31,6 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'work',
-        path: `${__dirname}/content/work`,
-      },
-    },
-    {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         typekit: {
@@ -52,12 +45,7 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
-          {
-            resolve: 'gatsby-remark-relative-images',
-            options: {
-              name: 'uploads',
-            },
-          },
+          'gatsby-remark-relative-images',
           {
             resolve: 'gatsby-remark-images',
             options: {
@@ -70,7 +58,7 @@ module.exports = {
           {
             resolve: 'gatsby-remark-copy-linked-files',
             options: {
-              destinationDir: 'static',
+              destinationDir: 'static/img/',
             },
           },
         ],

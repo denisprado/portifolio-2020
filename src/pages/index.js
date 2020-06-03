@@ -5,9 +5,11 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 const Index = ({ data }) => {
-  // const ComponentName = <pre style={{ color: 'black' }}>{JSON.stringify(data, null, 4)}</pre>
+
   return (
     <Layout>
+      {console.log(data)}
+      <Work items={data.allMarkdownRemark.nodes} />
     </Layout>
   )
 };
@@ -18,3 +20,38 @@ Index.propTypes = {
 
 export default Index;
 
+export const query = graphql`
+  query HomepageQuery {
+    allMarkdownRemark(filter: {frontmatter: {collection: {eq: "work"}}}) {
+      nodes {
+          frontmatter {
+            title
+            text
+            collection
+            date
+            image {
+              childImageSharp {
+                fluid {
+                  base64
+                }
+              }
+            }
+            slide {
+              childImageSharp {
+                fluid {
+                  base64
+                }
+              }
+            }
+            client
+            discipline
+            description
+          }
+        }
+      
+    }
+  }
+    
+    
+  
+`;

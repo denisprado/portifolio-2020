@@ -5,17 +5,17 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Container, ContainerImage, ContainerText, GalleryText, GalleryTitle } from './item.css';
 
-const Item = ({ title, text, image, featured }) => (
-  <Container featured={featured}>
-    <ContainerImage featured={featured}>
-      <Img fluid={image.childImageSharp.fluid} style={{ width: '100%' }} objectFit="cover"></Img>
+const Item = ({ frontmatter }) => (
+  <Container featured={frontmatter.featured}>
+    <ContainerImage featured={frontmatter.featured}>
+      <Img fluid={frontmatter.image.childImageSharp.fluid} style={{ width: '100%' }} objectFit="cover"></Img>
     </ContainerImage>
     <ContainerText>
       <GalleryText>
-        <Text>{text}</Text>
+        <Text>{frontmatter.text}</Text>
       </GalleryText>
       <GalleryTitle>
-        <Title>{title}</Title>
+        <Title>{frontmatter.title}</Title>
       </GalleryTitle>
     </ContainerText>
   </Container>
