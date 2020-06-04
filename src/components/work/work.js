@@ -7,11 +7,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { ContainerWork, ContainerWorkRow, HomeWork, ItemContainer } from './work.css';
 
-
 const Work = ({ items }) => {
-  console.log(items)
-  // Groupded Itens
-
   function arrayIntersect(array1, array2) {
     var arr_join = [],
       arr = array1.map((res, i) => {
@@ -52,7 +48,6 @@ const Work = ({ items }) => {
                   </ContainerWork>
                 ))}
               </ContainerWorkRow>
-
             ))) : (
               items.map((item, i) => (
                 <ItemContainer key={i} >

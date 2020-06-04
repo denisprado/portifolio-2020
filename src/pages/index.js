@@ -8,8 +8,8 @@ const Index = ({ data }) => {
 
   return (
     <Layout>
-      {console.log(data)}
-      <Work items={data.allMarkdownRemark.nodes} />
+      {/*console.log(data)}
+      {<Work items={data.allMarkdownRemark.nodes} /> */}
     </Layout>
   )
 };
@@ -20,7 +20,7 @@ Index.propTypes = {
 
 export default Index;
 
-export const query = graphql`
+/* export const query = graphql`
   query HomepageQuery {
     allMarkdownRemark(filter: {frontmatter: {collection: {eq: "work"}}}) {
       nodes {
@@ -31,27 +31,26 @@ export const query = graphql`
             date
             image {
               childImageSharp {
-                fluid {
-                  base64
+                fluid(quality: 100, maxWidth: 1260) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
             slide {
               childImageSharp {
-                fluid {
-                  base64
+                fluid(quality: 100, maxWidth: 1260) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
             client
             discipline
-            description
           }
         }
-      
+
     }
   }
-    
-    
-  
-`;
+
+
+
+`; */

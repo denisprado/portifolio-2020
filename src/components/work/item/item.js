@@ -7,8 +7,8 @@ import { Container, ContainerImage, ContainerText, GalleryText, GalleryTitle } f
 
 const Item = ({ frontmatter }) => (
   <Container featured={frontmatter.featured}>
-    <ContainerImage featured={frontmatter.featured}>
-      <Img fluid={frontmatter.image.childImageSharp.fluid} style={{ width: '100%' }} objectFit="cover"></Img>
+    <ContainerImage featured={frontmatter.image && frontmatter.featured}>
+      <img src={frontmatter.image && frontmatter.image.childImageSharp.fluid.src} style={{ width: '100%' }} objectFit="cover" alt={frontmatter.title}></img>
     </ContainerImage>
     <ContainerText>
       <GalleryText>
@@ -22,13 +22,7 @@ const Item = ({ frontmatter }) => (
 );
 
 Item.propTypes = {
-  title: PropTypes.string,
-  client: PropTypes.string,
-  text: PropTypes.string,
-  active: PropTypes.bool,
-  featured: PropTypes.bool,
-  setActive: PropTypes.func,
-  image: PropTypes.object.isRequired,
+  frontmatter: PropTypes.object
 };
 
 export default Item;
