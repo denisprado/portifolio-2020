@@ -8,8 +8,7 @@ const Index = ({ data }) => {
 
   return (
     <Layout>
-      {/*console.log(data)}
-      {<Work items={data.allMarkdownRemark.nodes} /> */}
+      <Work items={data.allMarkdownRemark.nodes} />
     </Layout>
   )
 };
@@ -20,7 +19,7 @@ Index.propTypes = {
 
 export default Index;
 
-/* export const query = graphql`
+export const query = graphql`
   query HomepageQuery {
     allMarkdownRemark(filter: {frontmatter: {collection: {eq: "work"}}}) {
       nodes {
@@ -50,7 +49,4 @@ export default Index;
 
     }
   }
-
-
-
-`; */
+`; 

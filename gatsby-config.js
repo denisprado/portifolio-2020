@@ -39,12 +39,14 @@ module.exports = {
         },
       },
     },
+    'gatsby-plugin-netlify-cms-paths',
     'gatsby-plugin-sharp',
     'gatsby-transformer-remark',
     {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
+          'gatsby-plugin-netlify-cms-paths',
           'gatsby-remark-relative-images',
           {
             resolve: 'gatsby-remark-images',
