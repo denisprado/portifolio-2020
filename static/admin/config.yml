@@ -15,7 +15,12 @@ collections:
     preview: true
     fields:
       - { name: path, label: Path }
-      - {label: "Collection", name: "collection", widget: "hidden", default: "work"}
+      - {
+          label: "Collection",
+          name: "collection",
+          widget: "hidden",
+          default: "work",
+        }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "text", widget: "string" }
@@ -32,6 +37,7 @@ collections:
       - label: "Discipline Type"
         name: "discipline"
         widget: "relation"
+        multiple: true
         collection: "discipline"
         searchFields: ["title"]
         valueField: "title"
@@ -44,7 +50,12 @@ collections:
     widget: "object"
     preview: true
     fields:
-      - {label: "Collection", name: "collection", widget: "hidden", default: "discipline"}
+      - {
+          label: "Collection",
+          name: "collection",
+          widget: "hidden",
+          default: "discipline",
+        }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "text", widget: "string" }
   - name: "client"
@@ -55,6 +66,11 @@ collections:
     widget: "object"
     preview: true
     fields:
-      - {label: "Collection", name: "collection", widget: "hidden", default: "client"}
+      - {
+          label: "Collection",
+          name: "collection",
+          widget: "hidden",
+          default: "client",
+        }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "text", widget: "string" }
