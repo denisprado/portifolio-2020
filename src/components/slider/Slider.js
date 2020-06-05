@@ -1,11 +1,9 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
-import { useEffect, useRef, useState } from 'react';
 import Arrow from 'components/slider/arrow';
 import Dots from 'components/slider/dots';
 import Slide from 'components/slider/slide';
-import { SlideContainer } from './slider.css';
 import SliderContent from 'components/slider/sliderContent';
+import React, { useEffect, useRef, useState } from 'react';
+import { SlideContainer } from './slider.css';
 
 const getWidth = () => typeof window !== 'undefined' ? window.innerWidth : null;
 
