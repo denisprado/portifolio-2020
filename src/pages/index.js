@@ -21,7 +21,7 @@ export default Index;
 
 export const query = graphql`
   query HomepageQuery {
-    allMarkdownRemark(filter: {frontmatter: {collection: {eq: "work"}}}) {
+    allMarkdownRemark(filter: {frontmatter: {collection: {eq: "work"}}}, sort: {fields: frontmatter___date, order: DESC}) {
       nodes {
           frontmatter {
             title

@@ -21,9 +21,9 @@ export const Container = styled.div`
   `}
   ${MEDIA.MIN_LARGE`
     min-height: ${(props) => (props.featured ? '600px' : '300px')};
-    width: ${(props) => (props.featured ? '740px' : '360px')};
-    // border: 1px solid yellow;
-  `}
+    width: ${({ featured }) => featured ? '740px' : '360px'};
+    //border: 1px solid yellow;
+`}
   margin-left: ${(props) => !props.featured && '20px'};
   cursor: pointer;
 `;
