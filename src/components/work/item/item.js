@@ -8,7 +8,7 @@ import { Container, ContainerImage, ContainerText, GalleryText, GalleryTitle } f
 const Item = ({ frontmatter }) => (
   <Container featured={frontmatter.featured}>
     <ContainerImage featured={frontmatter.image && frontmatter.featured}>
-      <Img fluid={frontmatter.image && frontmatter.image.childImageSharp.fluid} style={{ width: '100%' }} objectFit="cover" alt={frontmatter.title}></Img>
+      <Img fluid={frontmatter.image && frontmatter.image.childImageSharp.fluid} style={{ width: '100%' }} alt={frontmatter.title}></Img>
     </ContainerImage>
     <ContainerText>
       <GalleryText>

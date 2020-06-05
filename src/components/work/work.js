@@ -31,6 +31,7 @@ const Work = ({ items }) => {
   return (
     <>
       <Container full={false}>
+        {console.log(rowItems)}
         <HomeWork>
           {width >= BREAKPOINTS['DESKTOP'] ? (
             rowItems.map((row, r) => (
