@@ -6,6 +6,7 @@ import { chunk } from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { ContainerWork, ContainerWorkRow, HomeWork, ItemContainer } from './work.css';
+import Slider from 'components/slider';
 
 const Work = ({ items }) => {
   function arrayIntersect(array1, array2) {
@@ -30,8 +31,10 @@ const Work = ({ items }) => {
   const slideItems = items.filter(item => item.slide && item.slide).map(item => (item.frontmatter.slide.childImageSharp.fluid.src))
   return (
     <>
+      <Container full={true}>
+        <Slider slides={slideItems}></Slider>
+      </Container>
       <Container full={false}>
-        {console.log(rowItems)}
         <HomeWork>
           {width >= BREAKPOINTS['DESKTOP'] ? (
             rowItems.map((row, r) => (
