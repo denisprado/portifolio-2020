@@ -28,7 +28,7 @@ const Work = ({ items }) => {
   const rowItems = chunk(groupedItems, 2);
   const { width } = useWindowDimensions();
 
-  const slideItems = items.filter(item => item.slide && item.slide).map(item => (item.frontmatter.slide.childImageSharp.fluid.src))
+  const slideItems = items.filter(item => item.frontmatter.slide && item.frontmatter.slide).map(item => (item.frontmatter.slide.childImageSharp.fluid.src))
   return (
     <>
       <Container full={true}>

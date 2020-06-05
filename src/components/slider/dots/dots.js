@@ -26,7 +26,7 @@ const Dots = ({ slides, activeSlide }) => (
     `}
   >
     {slides.map((slide, i) => (
-      <Dot key={slide} active={activeSlide === i} />
+      <Dot key={i} active={activeSlide === i} />
     ))}
   </div>
 )

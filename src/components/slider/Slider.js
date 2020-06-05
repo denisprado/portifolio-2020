@@ -7,9 +7,9 @@ import Slide from 'components/slider/slide';
 import { SlideContainer } from './slider.css';
 import SliderContent from 'components/slider/sliderContent';
 
+const getWidth = () => typeof window !== 'undefined' ? window.innerWidth : null;
 
 const Slider = ({ slides, autoPlay }) => {
-  const getWidth = () => typeof window !== 'undefined' ? window.innerWidth : null;
   const firstSlide = slides[0];
   const secondSlide = slides[1];
   const lastSlide = slides[slides.length - 1];
@@ -116,7 +116,7 @@ const Slider = ({ slides, autoPlay }) => {
         width={getWidth() * _slides.length}
       >
         {_slides.map((_slide, i) => (
-          <Slide width={getWidth()} key={_slide + i} content={_slide} />
+          <Slide width={getWidth()} key={i} content={_slide} />
         ))}
       </SliderContent>
 
