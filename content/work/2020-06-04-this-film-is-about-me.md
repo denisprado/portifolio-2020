@@ -8,6 +8,7 @@ text: Diagramação de Dosier para o documentário This Film is About Me de Alex
 image: /img/this-film.jpg
 slide: /img/this-film.jpg
 client: Artístas
-discipline: Design Gráfico
+discipline: 
+  - Design Gráfico
 ---
 Diagramação de Dosier para o documentário This Film is About Me de Alexis Delgado

@@ -7,6 +7,7 @@ text: Trabalhos na Universidade de Vilnius
 image: /img/vgtu-thumb.jpg
 slide: /img/vgtu-slide.jpg
 client: Instituições
-discipline: Design Gráfico
+discipline: 
+    - Design Gráfico
 ---
 Trabalhos na Universidade de Vilnius

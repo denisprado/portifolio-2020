@@ -7,6 +7,7 @@ text: Posters para a VGTU
 image: /img/vgtu-posters.jpg
 slide: /img/vgtu-slide.jpg
 client: Instituições
-discipline: Design Gráfico
+discipline: 
+    - Design Gráfico
 ---
 Posters para a VGTU

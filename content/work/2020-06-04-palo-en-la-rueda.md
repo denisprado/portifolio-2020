@@ -7,6 +7,7 @@ text: Cartaz para um dos primeiros espetáculos de Poliana Lima.
 image: /img/palo.jpg
 slide: /img/palo.jpg
 client: Artístas
-discipline: Desenvolvimento Web
+discipline: 
+    - Desenvolvimento Web
 ---
 Cartaz para um dos primeiros espetáculos de Poliana Lima.
