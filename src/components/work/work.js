@@ -5,7 +5,12 @@ import useWindowDimensions from 'helpers/useWindowDimensions';
 import { chunk } from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { ContainerWork, ContainerWorkRow, HomeWork, ItemContainer } from './work.css';
+import {
+  ContainerWork,
+  ContainerWorkRow,
+  HomeWork,
+  ItemContainer,
+} from './work.css';
 import Slider from 'components/slider';
 
 const Work = ({ items }) => {
@@ -28,7 +33,9 @@ const Work = ({ items }) => {
   const rowItems = chunk(groupedItems, 2);
   const { width } = useWindowDimensions();
 
-  const slideItems = items.filter(item => item.frontmatter.slide && item.frontmatter.slide).map(item => (item.frontmatter.slide.childImageSharp.fluid.src))
+  const slideItems = items
+    .filter((item) => item.frontmatter.slide && item.frontmatter.slide)
+    .map((item) => item.frontmatter.slide.childImageSharp.fluid.src);
   return (
     <>
       <Container full={true}>
@@ -36,33 +43,36 @@ const Work = ({ items }) => {
       </Container>
       <Container full={false}>
         <HomeWork>
-          {width >= BREAKPOINTS['DESKTOP'] ? (
-            rowItems.map((row, r) => (
-              <ContainerWorkRow key={r} right={r % 2 === 0 && true}>
-                {row.map((item, i) => (
-                  <ContainerWork key={i} right={r % 2 === 0 && true}>
-                    <ItemContainer featured={i === 0 && true} right={r % 2 === 0 && true} >
-                      {i === 0 ?
-                        <Item {...item} featured={true} />
-                        :
-                        item.map((rItem, i) => (
-                          <Item {...rItem} featured={false} key={i} />
-                        ))}
-                    </ItemContainer>
-                  </ContainerWork>
-                ))}
-              </ContainerWorkRow>
-            ))) : (
-              items.map((item, i) => (
-                <ItemContainer key={i} >
+          {width >= BREAKPOINTS['DESKTOP']
+            ? rowItems.map((row, r) => (
+                <ContainerWorkRow key={r} right={r % 2 === 0 && true}>
+                  {row.map((item, i) => (
+                    <ContainerWork key={i} right={r % 2 === 0 && true}>
+                      <ItemContainer
+                        featured={i === 0 && true}
+                        right={r % 2 === 0 && true}
+                      >
+                        {i === 0 ? (
+                          <Item {...item} featured={true} />
+                        ) : (
+                          item.map((rItem, i) => (
+                            <Item {...rItem} featured={false} key={i} />
+                          ))
+                        )}
+                      </ItemContainer>
+                    </ContainerWork>
+                  ))}
+                </ContainerWorkRow>
+              ))
+            : items.map((item, i) => (
+                <ItemContainer key={i}>
                   <Item {...item} />
                 </ItemContainer>
-              ))
-            )}
-        </HomeWork >
+              ))}
+        </HomeWork>
       </Container>
     </>
-  )
+  );
 };
 
 Work.propTypes = {
