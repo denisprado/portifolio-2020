@@ -1,13 +1,13 @@
 ---
 path: VGTU Works
-collection: work
+collection: works
 title: Trabalhos na Universidade de Vilnius
 date: 2020-06-04T13:42:52.387Z
 text: Trabalhos na Universidade de Vilnius
 image: /img/vgtu-thumb.jpg
 slide: /img/vgtu-slide.jpg
-client: Instituições
-discipline: 
+clients: Instituições
+disciplines: 
     - Design Gráfico
 ---
 Trabalhos na Universidade de Vilnius

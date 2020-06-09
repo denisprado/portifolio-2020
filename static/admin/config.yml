@@ -6,44 +6,9 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "work"
-    label: "Work"
-    folder: "content/work"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    widget: "object"
-    preview: true
-    fields:
-      - {
-          label: "Collection",
-          name: "collection",
-          widget: "hidden",
-          default: "work",
-        }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Description", name: "text", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Image", name: image, widget: image }
-      - { label: "Slide", name: slide, widget: image }
-      - label: "Client Type"
-        name: "client"
-        widget: "relation"
-        collection: "client"
-        searchFields: ["title"]
-        valueField: "title"
-        displayFields: ["title"]
-      - label: "Discipline Type"
-        name: "discipline"
-        widget: "relation"
-        multiple: true
-        collection: "discipline"
-        searchFields: ["title"]
-        valueField: "title"
-        displayFields: ["title"]
-  - name: "discipline"
-    label: "Discipline"
-    folder: "content/discipline"
+  - name: "works"
+    label: "Works"
+    folder: "content/works"
     create: true
     slug: "{{slug}}"
     widget: "object"
@@ -53,13 +18,48 @@ collections:
           label: "Collection",
           name: "collection",
           widget: "hidden",
-          default: "discipline",
+          default: "works",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "text", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Image", name: image, widget: image }
+      - { label: "Slide", name: slide, widget: image }
+      - label: "Client Type"
+        name: "clients"
+        widget: "relation"
+        collection: "clients"
+        searchFields: ["title"]
+        valueField: "title"
+        displayFields: ["title"]
+      - label: "Discipline Type"
+        name: "disciplines"
+        widget: "relation"
+        multiple: true
+        collection: "disciplines"
+        searchFields: ["title"]
+        valueField: "title"
+        displayFields: ["title"]
+  - name: "disciplines"
+    label: "Disciplines"
+    folder: "content/disciplines"
+    create: true
+    slug: "{{slug}}"
+    widget: "object"
+    preview: true
+    fields:
+      - {
+          label: "Collection",
+          name: "collection",
+          widget: "hidden",
+          default: "disciplines",
         }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "text", widget: "string" }
-  - name: "client"
+  - name: "clients"
     label: "Type of Client"
-    folder: "content/client"
+    folder: "content/clients"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     widget: "object"
@@ -69,7 +69,7 @@ collections:
           label: "Collection",
           name: "collection",
           widget: "hidden",
-          default: "client",
+          default: "clients",
         }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "text", widget: "string" }

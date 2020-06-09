@@ -1,12 +1,12 @@
 ---
 path: Cena Aberta
-collection: work
+collection: works
 title: Cena Aberta.
 date: 2020-06-04T13:39:15.572Z
 text: Logotipo para o site Cena Aberta.
 image: /img/cena-aberta.jpg
 slide: /img/cena-aberta.jpg
-client: Instituições
+clients: Instituições
 discipline:
   - Desenvolvimento Web
   - Design Gráfico

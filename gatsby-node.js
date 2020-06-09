@@ -1,13 +1,10 @@
 const path = require('path');
 const DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin');
-const _ = require('lodash')
-const { createFilePath } = require('gatsby-source-filesystem')
-const { fmImagesToRelative } = require('gatsby-remark-relative-images')
+const _ = require('lodash');
+const { createFilePath } = require('gatsby-source-filesystem');
+const { fmImagesToRelative } = require('gatsby-remark-relative-images');
 
-exports.onCreateWebpackConfig = ({
-  stage, loaders,
-  actions,
-}) => {
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   actions.setWebpackConfig({
     resolve: {
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
@@ -21,38 +18,41 @@ exports.onCreateWebpackConfig = ({
 };
 
 exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
 
   return graphql(`
     {
-      allMarkdownRemark(limit: 1000, filter: {frontmatter: {collection: {eq: "work"}}}) {
+      allMarkdownRemark(
+        limit: 1000
+        filter: { frontmatter: { collection: { eq: "works" } } }
+      ) {
         nodes {
           fields {
             slug
           }
           id
           frontmatter {
-            client
             collection
-            discipline
+            clients
+            disciplines
           }
         }
       }
     }
   `).then((result) => {
     if (result.errors) {
-      result.errors.forEach((e) => console.error(e.toString()))
+      result.errors.forEach((e) => console.error(e.toString()));
       // eslint-disable-next-line no-undef
-      return Promise.reject(result.errors)
+      return Promise.reject(result.errors);
     }
 
-    const posts = result.data.allMarkdownRemark.nodes
+    const posts = result.data.allMarkdownRemark.nodes;
     posts.forEach((edge) => {
       console.log(edge.fields.slug);
       const id = edge.id;
       createPage({
         path: edge.fields.slug,
-        discipline: edge.frontmatter.discipline,
+        disciplines: edge.frontmatter.disciplines,
         component: path.resolve(
           `src/templates/${String(edge.frontmatter.collection)}.js`
         ),
@@ -60,45 +60,45 @@ exports.createPages = ({ actions, graphql }) => {
         context: {
           id,
         },
-      })
-    })
+      });
+    });
 
     // Tag pages:
-    let discipline = []
+    let discipline = [];
     // Iterate through each post, putting all found discipline into `discipline`
     posts.forEach((edge) => {
-      if (_.get(edge, 'frontmatter.discipline')) {
-        discipline = discipline.concat(edge.frontmatter.discipline)
+      if (_.get(edge, 'frontmatter.disciplines')) {
+        disciplines = discipline.concat(edge.frontmatter.disciplines);
       }
-    })
+    });
     // Eliminate duplicate discipline
-    discipline = _.uniq(discipline)
+    disciplines = _.uniq(disciplines);
 
     // Make tag pages
-    discipline.forEach((tag) => {
-      const tagPath = `/discipline/${_.kebabCase(tag)}/`
+    disciplines.forEach((tag) => {
+      const tagPath = `/disciplines/${_.kebabCase(tag)}/`;
 
       createPage({
         path: tagPath,
-        component: path.resolve('src/templates/discipline.js'),
+        component: path.resolve('src/templates/disciplines.js'),
         context: {
           tag,
         },
-      })
-    })
-  })
-}
+      });
+    });
+  });
+};
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
-  fmImagesToRelative(node) // convert image paths for gatsby images
+  const { createNodeField } = actions;
+  fmImagesToRelative(node); // convert image paths for gatsby images
 
   if (node.internal.type === 'MarkdownRemark') {
-    const value = createFilePath({ node, getNode })
+    const value = createFilePath({ node, getNode });
     createNodeField({
       name: 'slug',
       node,
       value,
-    })
+    });
   }
-}
+};
