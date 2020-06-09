@@ -7,7 +7,7 @@ text: Logotipo para o site Cena Aberta.
 image: /img/cena-aberta.jpg
 slide: /img/cena-aberta.jpg
 clients: Instituições
-discipline:
+disciplines: 
   - Desenvolvimento Web
   - Design Gráfico
 ---

@@ -47,12 +47,13 @@ exports.createPages = ({ actions, graphql }) => {
     }
 
     const posts = result.data.allMarkdownRemark.nodes;
+    console.log(posts);
     posts.forEach((edge) => {
-      console.log(edge.fields.slug);
       const id = edge.id;
       createPage({
         path: edge.fields.slug,
         disciplines: edge.frontmatter.disciplines,
+        clients: edge.frontmatter.clients,
         component: path.resolve(
           `src/templates/${String(edge.frontmatter.collection)}.js`
         ),

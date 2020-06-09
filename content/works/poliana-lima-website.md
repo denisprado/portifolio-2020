@@ -8,7 +8,7 @@ text: Poliana Lima (Brasil, 1983) es coreógrafa, bailarina y docente, afincada
 image: /img/poliana.jpg
 slide: /img/poliana.jpg
 clients: Artístas
-discipline:
+disciplines: 
   - Desenvolvimento Web
   - Design Gráfico
 ---

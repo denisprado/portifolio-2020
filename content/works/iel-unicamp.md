@@ -7,7 +7,7 @@ text: Logotipo vencedor para Identidade Visual do IEL Unicamp.
 image: /img/iel-thumb.jpg
 slide: /img/iel-slide.jpg
 clients: Instituições
-discipline:
+disciplines:
   - Design Gráfico
 ---
 Logotipo vencedor para Identidade Visual do IEL Unicamp.
