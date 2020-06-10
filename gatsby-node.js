@@ -4,7 +4,7 @@ const _ = require('lodash');
 const { createFilePath } = require('gatsby-source-filesystem');
 const { fmImagesToRelative } = require('gatsby-remark-relative-images');
 
-exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
@@ -65,11 +65,11 @@ exports.createPages = ({ actions, graphql }) => {
     });
 
     // Tag pages:
-    let discipline = [];
+    let disciplines = [];
     // Iterate through each post, putting all found discipline into `discipline`
     posts.forEach((edge) => {
       if (_.get(edge, 'frontmatter.disciplines')) {
-        disciplines = discipline.concat(edge.frontmatter.disciplines);
+        disciplines = disciplines.concat(edge.frontmatter.disciplines);
       }
     });
     // Eliminate duplicate discipline

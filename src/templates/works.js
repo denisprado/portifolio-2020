@@ -8,23 +8,23 @@ class WorkRoute extends React.Component {
     const works = this.props.data.allMarkdownRemark.nodes;
     console.log(works);
 
-    // const workLinks =
-    //   works &&
-    //   works.map(
-    //     (work) => console.log( work)
+    const workLinks =
+      works &&
+      works.map(
+        (work) =>
 
-    // <li key={work.nodes.fields.slug}>
-    //   <Link to={work.nodes.fields.slug}>
-    //     <h2 className="is-size-2">{work.nodes.frontmatter.title}</h2>
-    //   </Link>
-    // </li>
-    //          );
+          <li key={work.fields.slug}>
+            <Link to={work.fields.slug}>
+              <h2 className="is-size-2">{work.frontmatter.title}</h2>
+            </Link>
+          </li>
+      );
     const work = this.props.pageContext.work;
     const title = this.props.data.site.siteMetadata.siteTitle;
     const totalCount = this.props.data.allMarkdownRemark.totalCount;
     const workHeader = `${totalCount} work${
       totalCount === 1 ? '' : 's'
-    } tagged with “${work}”`;
+      } tagged with “${work}”`;
 
     return (
       <Layout>
@@ -37,9 +37,9 @@ class WorkRoute extends React.Component {
                 style={{ marginBottom: '6rem' }}
               >
                 <h3 className="title is-size-4 is-bold-light">{workHeader}</h3>
-                <ul className="worklist"></ul>
+                <ul className="worklist">{workLinks}</ul>
                 <p>
-                  <Link to="/works/">Browse all works</Link>
+                  <Link to="/works/">veja mais trabalhos</Link>
                 </p>
               </div>
             </div>
@@ -53,7 +53,7 @@ class WorkRoute extends React.Component {
 export default WorkRoute;
 
 export const workPageQuery = graphql`
-  query WorkPage {
+  query WorkPage{
     site {
       siteMetadata {
         siteTitle
