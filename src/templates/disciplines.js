@@ -5,7 +5,6 @@ import Layout from '../components/layout';
 
 class DisciplineRoute extends React.Component {
   render() {
-    console.log(this.props);
     const posts = this.props.data.allMarkdownRemark.nodes;
     const postLinks = posts.map((post) => (
       <li key={post.fields.slug}>

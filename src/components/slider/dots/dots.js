@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import React from 'react'
-import { css, jsx } from '@emotion/core'
+import { css, jsx } from '@emotion/core';
 
 const Dot = ({ active }) => (
   <span
@@ -12,7 +11,7 @@ const Dot = ({ active }) => (
       background: ${active ? 'black' : 'white'};
     `}
   />
-)
+);
 
 const Dots = ({ slides, activeSlide }) => (
   <div
@@ -29,6 +28,6 @@ const Dots = ({ slides, activeSlide }) => (
       <Dot key={i} active={activeSlide === i} />
     ))}
   </div>
-)
+);
 
-export default Dots
+export default Dots;

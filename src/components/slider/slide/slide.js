@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import React from 'react';
-import { css, jsx } from '@emotion/core';
+import { jsx } from '@emotion/core';
 import Footer from 'components/slider/footer';
 import { SlideContainer, FooterContainer } from './slide.css';
 

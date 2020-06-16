@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import React from 'react';
 import { css, jsx } from '@emotion/core';
 import leftArrow from 'images/left-arrow.svg';
 import rightArrow from 'images/right-arrow.svg';

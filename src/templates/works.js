@@ -6,25 +6,22 @@ import Layout from '../components/layout';
 class WorkRoute extends React.Component {
   render() {
     const works = this.props.data.allMarkdownRemark.nodes;
-    console.log(works);
 
     const workLinks =
       works &&
-      works.map(
-        (work) =>
-
-          <li key={work.fields.slug}>
-            <Link to={work.fields.slug}>
-              <h2 className="is-size-2">{work.frontmatter.title}</h2>
-            </Link>
-          </li>
-      );
+      works.map((work) => (
+        <li key={work.fields.slug}>
+          <Link to={work.fields.slug}>
+            <h2 className="is-size-2">{work.frontmatter.title}</h2>
+          </Link>
+        </li>
+      ));
     const work = this.props.pageContext.work;
     const title = this.props.data.site.siteMetadata.siteTitle;
     const totalCount = this.props.data.allMarkdownRemark.totalCount;
     const workHeader = `${totalCount} work${
       totalCount === 1 ? '' : 's'
-      } tagged with “${work}”`;
+    } tagged with “${work}”`;
 
     return (
       <Layout>
@@ -53,7 +50,7 @@ class WorkRoute extends React.Component {
 export default WorkRoute;
 
 export const workPageQuery = graphql`
-  query WorkPage{
+  query WorkPage {
     site {
       siteMetadata {
         siteTitle

@@ -1,5 +1,5 @@
 import React from 'react';
-import { css, jsx } from '@emotion/core';
+import { css } from '@emotion/core';
 import Title from 'components/title';
 import Text from 'components/text';
 import Container from 'components/container';
@@ -15,9 +15,9 @@ const Footer = ({ title, text }) => (
         color: white;
       `}
     >
-      {title}
+      {title && title}
     </Title>
-    <Text>{text}</Text>
+    <Text>{text && text}</Text>
   </Container>
 );
 
