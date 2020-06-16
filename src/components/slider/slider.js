@@ -5,7 +5,8 @@ import SliderContent from 'components/slider/sliderContent';
 import React, { useEffect, useRef, useState } from 'react';
 import { SlideContainer } from './slider.css';
 
-const getWidth = () => typeof window !== 'undefined' ? window.innerWidth : null;
+const getWidth = () =>
+  typeof window !== 'undefined' ? window.innerWidth : null;
 
 const Slider = ({ slides, autoPlay }) => {
   const firstSlide = slides[0];
@@ -16,7 +17,7 @@ const Slider = ({ slides, autoPlay }) => {
     activeSlide: 0,
     translate: getWidth(),
     transition: 0.45,
-    _slides: [lastSlide, firstSlide, secondSlide]
+    _slides: [lastSlide, firstSlide, secondSlide],
   });
 
   const { activeSlide, translate, _slides, transition } = state;
@@ -29,22 +30,22 @@ const Slider = ({ slides, autoPlay }) => {
     autoPlayRef.current = nextSlide;
     transitionRef.current = smoothTransition;
     resizeRef.current = handleResize;
-  })
+  });
 
   useEffect(() => {
     const play = () => {
       autoPlayRef.current();
-    }
+    };
 
-    const smooth = e => {
+    const smooth = (e) => {
       if (e.target.className.includes('SliderContent')) {
         transitionRef.current();
       }
-    }
+    };
 
     const resize = () => {
       resizeRef.current();
-    }
+    };
 
     const transitionEnd = window.addEventListener('transitionend', smooth);
     const onResize = window.addEventListener('resize', resize);
@@ -62,25 +63,25 @@ const Slider = ({ slides, autoPlay }) => {
       if (autoPlay) {
         clearInterval(interval);
       }
-    }
-  }, [])
+    };
+  }, []);
 
   useEffect(() => {
-    if (transition === 0) setState({ ...state, transition: 0.45 })
-  }, [transition])
+    if (transition === 0) setState({ ...state, transition: 0.45 });
+  }, [transition]);
 
   const handleResize = () => {
     setState({ ...state, translate: getWidth(), transition: 0 });
-  }
+  };
 
   const smoothTransition = () => {
     let _slides = [];
 
     // We're at the last slide.
     if (activeSlide === slides.length - 1)
-      _slides = [slides[slides.length - 2], lastSlide, firstSlide]
+      _slides = [slides[slides.length - 2], lastSlide, firstSlide];
     // We're back at the first slide. Just reset to how it was on initial render
-    else if (activeSlide === 0) _slides = [lastSlide, firstSlide, secondSlide]
+    else if (activeSlide === 0) _slides = [lastSlide, firstSlide, secondSlide];
     // Create an array of the previous last slide, and the next two slides that follow it.
     else _slides = slides.slice(activeSlide - 1, activeSlide + 2);
 
@@ -88,22 +89,22 @@ const Slider = ({ slides, autoPlay }) => {
       ...state,
       _slides,
       transition: 0,
-      translate: getWidth()
+      translate: getWidth(),
     });
-  }
+  };
 
   const nextSlide = () =>
     setState({
       ...state,
       translate: translate + getWidth(),
-      activeSlide: activeSlide === slides.length - 1 ? 0 : activeSlide + 1
+      activeSlide: activeSlide === slides.length - 1 ? 0 : activeSlide + 1,
     });
 
   const prevSlide = () =>
     setState({
       ...state,
       translate: 0,
-      activeSlide: activeSlide === 0 ? slides.length - 1 : activeSlide - 1
+      activeSlide: activeSlide === 0 ? slides.length - 1 : activeSlide - 1,
     });
 
   return (
@@ -124,6 +125,6 @@ const Slider = ({ slides, autoPlay }) => {
       <Dots slides={slides} activeSlide={activeSlide} />
     </SlideContainer>
   );
-}
+};
 
 export default Slider;

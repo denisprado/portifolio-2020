@@ -38,37 +38,35 @@ const Work = ({ items }) => {
     .map((item) => item.frontmatter);
   return (
     <>
-      <Container full={true}>
-        <Slider slides={slideItems}></Slider>
-      </Container>
+      <Slider slides={slideItems}></Slider>
       <Container full={false}>
         <HomeWork>
           {width >= BREAKPOINTS['DESKTOP']
             ? rowItems.map((row, r) => (
-              <ContainerWorkRow key={r} right={r % 2 === 0 && true}>
-                {row.map((item, i) => (
-                  <ContainerWork key={i} right={r % 2 === 0 && true}>
-                    <ItemContainer
-                      featured={i === 0 && true}
-                      right={r % 2 === 0 && true}
-                    >
-                      {i === 0 ? (
-                        <Item {...item} featured={true} />
-                      ) : (
+                <ContainerWorkRow key={r} right={r % 2 === 0 && true}>
+                  {row.map((item, i) => (
+                    <ContainerWork key={i} right={r % 2 === 0 && true}>
+                      <ItemContainer
+                        featured={i === 0 && true}
+                        right={r % 2 === 0 && true}
+                      >
+                        {i === 0 ? (
+                          <Item {...item} featured={true} />
+                        ) : (
                           item.map((rItem, i) => (
                             <Item {...rItem} featured={false} key={i} />
                           ))
                         )}
-                    </ItemContainer>
-                  </ContainerWork>
-                ))}
-              </ContainerWorkRow>
-            ))
+                      </ItemContainer>
+                    </ContainerWork>
+                  ))}
+                </ContainerWorkRow>
+              ))
             : items.map((item, i) => (
-              <ItemContainer key={i}>
-                <Item {...item} />
-              </ItemContainer>
-            ))}
+                <ItemContainer key={i}>
+                  <Item {...item} />
+                </ItemContainer>
+              ))}
         </HomeWork>
       </Container>
     </>

@@ -1,7 +1,15 @@
 /** @jsx jsx */
+import React from 'react';
 import { css, jsx } from '@emotion/core';
-import leftArrow from '../../../images/left-arrow.svg';
+import leftArrow from 'images/left-arrow.svg';
 import rightArrow from 'images/right-arrow.svg';
+
+const ArrowDirection = ({ direction }) =>
+  direction === 'right' ? (
+    <img src={rightArrow} alt="right" />
+  ) : (
+    <img src={leftArrow} alt="left" />
+  );
 
 const Arrow = ({ direction, handleClick }) => (
   <div
@@ -20,7 +28,7 @@ const Arrow = ({ direction, handleClick }) => (
       cursor: pointer;
       align-items: center;
       transition: transform ease-in 0.1s;
-
+      color: white;
       &:hover {
         transform: scale(1.1);
       }
@@ -29,17 +37,17 @@ const Arrow = ({ direction, handleClick }) => (
         transform: translateX(${direction === 'left' ? '-2' : '2'}px);
         height: 50px;
         width: 50px;
+        svg {
+          fill: transparent;
+          border: 2px solid white;
+        }
         &:focus {
           outline: 0;
         }
       }
     `}
   >
-    {direction === 'right' ? (
-      <img srcSet={rightArrow} alt={'Previous'} />
-    ) : (
-      <img srcSet={leftArrow} alt={'Next'} />
-    )}
+    <ArrowDirection direction={direction} />
   </div>
 );
 

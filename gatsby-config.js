@@ -69,14 +69,7 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-netlify-cms',
     'gatsby-plugin-webpack-size',
-    {
-      resolve: 'gatsby-plugin-react-svg',
-      options: {
-        rule: {
-          include: /images\/.*\.svg/,
-        },
-      },
-    },
+    'gatsby-plugin-svgr',
     'gatsby-plugin-netlify',
   ],
 };

@@ -1,27 +1,18 @@
 /** @jsx jsx */
-import React from 'react'
-import { css, jsx } from '@emotion/core'
-import Title from 'components/title';
+import React from 'react';
+import { css, jsx } from '@emotion/core';
+import Footer from 'components/slider/footer';
+import { SlideContainer, FooterContainer } from './slide.css';
 
 const Slide = ({ content, width }) => (
-  <>
-    <div
-      css={css`
-      height: 100%;
-      width: ${width}px;
-      background-image: url('${content.slide.childImageSharp.fluid.src}');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-    `}
-    >
-    </div>
-    <Title css={css`
-      width: 100px;
-      bottom: 2rem;
-      position: absolute;
-    `}>{content.title}</Title>
-  </>
-)
+  <SlideContainer
+    background={content.slide.childImageSharp.fluid.src}
+    width={width}
+  >
+    <FooterContainer>
+      <Footer content={content}></Footer>
+    </FooterContainer>
+  </SlideContainer>
+);
 
-export default Slide
+export default Slide;
