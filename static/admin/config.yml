@@ -25,7 +25,8 @@ collections:
       - { label: "Description", name: "text", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Image", name: image, widget: image }
-      - { label: "Slide", name: slide, widget: image }
+      - { label: "Slide Image", name: slide, widget: image }
+      - { label: "Show Slide", name: showSlide, widget: bool, default: false }
       - label: "Client Type"
         name: "clients"
         widget: "relation"
