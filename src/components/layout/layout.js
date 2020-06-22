@@ -5,11 +5,11 @@ import Head from 'components/head';
 import Header from 'components/header';
 import GlobalStyle from 'global.css.js';
 
-const Layout = ({ data, children }) => (
+const Layout = ({ data, children, inverse }) => (
   <>
     <GlobalStyle />
     <Head />
-    <Header title={data.site.siteMetadata.siteTitle} />
+    <Header title={data.site.siteMetadata.siteTitle} inverse={inverse} />
     {children}
   </>
 );

@@ -33,8 +33,14 @@ const Work = ({ items }) => {
   const rowItems = chunk(groupedItems, 2);
   const { width } = useWindowDimensions();
 
+  // slide featured items
   const slideItems = items
-    .filter((item) => item.frontmatter.slide && item.frontmatter.slide)
+    .filter(
+      (item) =>
+        item.frontmatter.slide &&
+        item.frontmatter.showSlide &&
+        item.frontmatter.slide
+    )
     .map((item) => item.frontmatter);
   return (
     <>

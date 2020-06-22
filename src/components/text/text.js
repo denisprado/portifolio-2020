@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { TextContainer } from './text.css';
 
-const Text = ({ children, as = 'p', size }) => (
-  <TextContainer as={as} size={size}>
+const Text = ({ children, as = 'p', size, inverse }) => (
+  <TextContainer as={as} size={size} inverse={inverse}>
     {children}
   </TextContainer>
 );

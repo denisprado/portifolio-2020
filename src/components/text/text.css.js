@@ -9,6 +9,9 @@ export const TextContainer = styled.p`
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   max-height: 2.8em;
+
+  color: ${({ inverse }) => (inverse ? '#fff' : '#000')};
+
   font-weight: ${({ size }) => () => {
     switch (size) {
       case 'large':

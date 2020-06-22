@@ -6,9 +6,9 @@ export const Text = styled.h4`
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  max-height: 2.8em;
-  line-height: 2.5rem;
-
+  font-family: ${({ fontType }) => fontType && fontType} !important;
+  color: ${({ color }) => color && color};
+  color: ${({ inverse }) => inverse && 'white'};
   font-weight: ${({ size }) => () => {
     switch (size) {
       case 'large':

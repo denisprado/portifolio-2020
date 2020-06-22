@@ -16,12 +16,15 @@ export const Container = styled.div`
   `}
   ${MEDIA.MIN_DESKTOP`
     min-height: ${(props) => (props.featured ? '432px' : '100px')};
-    width: ${(props) => (props.featured ? 'calc((((100vw - 320px)/ 12) * 6) + 100px)' : 'calc((((100vw - 320px)/ 12) * 3) + 40px);')};
+    width: ${(props) =>
+      props.featured
+        ? 'calc((((100vw - 320px)/ 12) * 6) + 100px)'
+        : 'calc((((100vw - 320px)/ 12) * 3) + 40px);'};
     // border: 1px solid red;
   `}
   ${MEDIA.MIN_LARGE`
     min-height: ${(props) => (props.featured ? '600px' : '300px')};
-    width: ${({ featured }) => featured ? '740px' : '360px'};
+    width: ${({ featured }) => (featured ? '740px' : '360px')};
     //border: 1px solid yellow;
 `}
   margin-left: ${(props) => !props.featured && '20px'};

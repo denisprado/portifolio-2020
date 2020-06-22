@@ -4,15 +4,17 @@ import { Link } from 'gatsby';
 import Container from 'components/container';
 import Title from 'components/title';
 import Nav from 'components/header/nav';
-import { HeaderContainer } from './header.css'
+import { HeaderContainer } from './header.css';
 
-const Header = ({ title }) => (
+const Header = ({ title, inverse }) => (
   <Container>
     <HeaderContainer>
       <Link to="/">
-        <Title as="h1">{title}</Title>
+        <Title as="h1" color={'#ce1110'} size={'large'} fontType={'georgia'}>
+          {title}
+        </Title>
       </Link>
-      <Nav />
+      <Nav inverse={inverse} />
     </HeaderContainer>
   </Container>
 );

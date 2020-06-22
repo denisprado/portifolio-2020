@@ -6,7 +6,7 @@ import React from 'react';
 
 const Index = ({ data }) => {
   return (
-    <Layout>
+    <Layout inverse>
       <Work items={data.allMarkdownRemark.nodes} />
     </Layout>
   );
@@ -37,6 +37,7 @@ export const query = graphql`
               }
             }
           }
+          showSlide
           slide {
             childImageSharp {
               fluid(quality: 100, maxWidth: 1260) {
@@ -46,6 +47,9 @@ export const query = graphql`
           }
           clients
           disciplines
+        }
+        fields {
+          slug
         }
       }
     }
