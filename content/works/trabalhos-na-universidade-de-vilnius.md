@@ -11,4 +11,4 @@ slide: /img/vgtu-slide.jpg
 showSlide: false
 clients: Instituições
 ---
-Trabalhos na Universidade de Vilnius
+em 2016 fui contemplado pelo edital da Unicamp para Mobilidade de Funcionários e trabalhei durante um mês na universidade de Vilnius, na Lituânia.
