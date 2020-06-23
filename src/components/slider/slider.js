@@ -8,7 +8,17 @@ import { SlideContainer } from './slider.css';
 const getWidth = () =>
   typeof window !== 'undefined' ? window.innerWidth : null;
 
-const Slider = ({ slides, autoPlay }) => {
+const Slider = ({ slides: items, autoPlay }) => {
+  // slide featured items
+  const slides = items
+    .filter(
+      (item) =>
+        item.frontmatter.slide &&
+        item.frontmatter.showSlide &&
+        item.frontmatter.slide
+    )
+    .map((item) => item.frontmatter);
+
   const firstSlide = slides[0];
   const secondSlide = slides[1];
   const lastSlide = slides[slides.length - 1];

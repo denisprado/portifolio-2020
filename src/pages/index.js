@@ -1,5 +1,6 @@
 import Layout from 'components/layout';
 import Work from 'components/work';
+import Slider from 'components/slider';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -7,6 +8,7 @@ import React from 'react';
 const Index = ({ data }) => {
   return (
     <Layout inverse>
+      <Slider slides={data.allMarkdownRemark.nodes}></Slider>
       <Work items={data.allMarkdownRemark.nodes} />
     </Layout>
   );

@@ -11,7 +11,6 @@ import {
   HomeWork,
   ItemContainer,
 } from './work.css';
-import Slider from 'components/slider';
 
 const Work = ({ items }) => {
   function arrayIntersect(array1, array2) {
@@ -33,49 +32,37 @@ const Work = ({ items }) => {
   const rowItems = chunk(groupedItems, 2);
   const { width } = useWindowDimensions();
 
-  // slide featured items
-  const slideItems = items
-    .filter(
-      (item) =>
-        item.frontmatter.slide &&
-        item.frontmatter.showSlide &&
-        item.frontmatter.slide
-    )
-    .map((item) => item.frontmatter);
   return (
-    <>
-      <Slider slides={slideItems}></Slider>
-      <Container full={false}>
-        <HomeWork>
-          {width >= BREAKPOINTS['DESKTOP']
-            ? rowItems.map((row, r) => (
-                <ContainerWorkRow key={r} right={r % 2 === 0 && true}>
-                  {row.map((item, i) => (
-                    <ContainerWork key={i} right={r % 2 === 0 && true}>
-                      <ItemContainer
-                        featured={i === 0 && true}
-                        right={r % 2 === 0 && true}
-                      >
-                        {i === 0 ? (
-                          <Item {...item} featured={true} />
-                        ) : (
-                          item.map((rItem, i) => (
-                            <Item {...rItem} featured={false} key={i} />
-                          ))
-                        )}
-                      </ItemContainer>
-                    </ContainerWork>
-                  ))}
-                </ContainerWorkRow>
-              ))
-            : items.map((item, i) => (
-                <ItemContainer key={i}>
-                  <Item {...item} />
-                </ItemContainer>
-              ))}
-        </HomeWork>
-      </Container>
-    </>
+    <Container full={false}>
+      <HomeWork>
+        {width >= BREAKPOINTS['DESKTOP']
+          ? rowItems.map((row, r) => (
+              <ContainerWorkRow key={r} right={r % 2 === 0 && true}>
+                {row.map((item, i) => (
+                  <ContainerWork key={i} right={r % 2 === 0 && true}>
+                    <ItemContainer
+                      featured={i === 0 && true}
+                      right={r % 2 === 0 && true}
+                    >
+                      {i === 0 ? (
+                        <Item {...item} featured={true} />
+                      ) : (
+                        item.map((rItem, i) => (
+                          <Item {...rItem} featured={false} key={i} />
+                        ))
+                      )}
+                    </ItemContainer>
+                  </ContainerWork>
+                ))}
+              </ContainerWorkRow>
+            ))
+          : items.map((item, i) => (
+              <ItemContainer key={i}>
+                <Item {...item} />
+              </ItemContainer>
+            ))}
+      </HomeWork>
+    </Container>
   );
 };
 

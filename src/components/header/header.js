@@ -10,7 +10,7 @@ const Header = ({ title, inverse }) => (
   <Container>
     <HeaderContainer>
       <Link to="/">
-        <Title as="h1" color={'#ce1110'} size={'large'} fontType={'georgia'}>
+        <Title as="h1" color={'#e61428'} size={'logo'} fontType={'georgia'}>
           {title}
         </Title>
       </Link>

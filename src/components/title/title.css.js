@@ -9,6 +9,7 @@ export const Text = styled.h4`
   font-family: ${({ fontType }) => fontType && fontType} !important;
   color: ${({ color }) => color && color};
   color: ${({ inverse }) => inverse && 'white'};
+
   font-weight: ${({ size }) => () => {
     switch (size) {
       case 'large':
@@ -19,8 +20,10 @@ export const Text = styled.h4`
   }};
   font-size: ${({ size }) => () => {
     switch (size) {
+      case 'logo':
+        return '4.1rem';
       case 'large':
-        return '3.2rem';
+        return '5.5rem';
       default:
         return '1.9rem';
     }

@@ -4,7 +4,7 @@ import { TextContainer } from './text.css';
 
 const Text = ({ children, as = 'p', size, inverse }) => (
   <TextContainer as={as} size={size} inverse={inverse}>
-    {children}
+    <span dangerouslySetInnerHTML={{ __html: children }} />
   </TextContainer>
 );
 
