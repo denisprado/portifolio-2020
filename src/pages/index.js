@@ -9,7 +9,7 @@ const Index = ({ data }) => {
   return (
     <Layout inverse>
       <Slider slides={data.allMarkdownRemark.nodes}></Slider>
-      <Work items={data.allMarkdownRemark.nodes} />
+      <Work items={data.allMarkdownRemark.nodes} grouped={true} />
     </Layout>
   );
 };
@@ -23,7 +23,7 @@ export default Index;
 export const query = graphql`
   query HomepageQuery {
     allMarkdownRemark(
-      filter: { frontmatter: { collection: { eq: "works" } } }
+      filter: { frontmatter: { collection: { eq: "work" } } }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
       nodes {

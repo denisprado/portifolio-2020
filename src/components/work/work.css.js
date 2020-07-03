@@ -4,13 +4,12 @@ import MEDIA from 'helpers/mediaTemplates';
 export const HomeWork = styled.div`
   padding-top: 80px;
   width: 100vw;
-  min-height: 100vh;
-  background: #fff;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
   padding-right: 4rem;
   padding-left: 4rem;
+  min-height: 100vh;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -23,6 +22,7 @@ export const HomeWork = styled.div`
 export const ContainerWorkRow = styled.div`
   display: flex;
   flex-direction: ${({ right }) => right ? 'row' : 'row-reverse'};
+  margin: 0 auto;
 `;
 
 export const ContainerWork = styled.div`
@@ -40,7 +40,7 @@ export const ItemContainer = styled.article`
   flex-wrap: wrap;
   ${MEDIA.MIN_DESKTOP`
     width: ${({ featured }) => (featured ? 'calc((((100vw - 320px)/ 12) * 6) + 100px)' : 'calc(((((100vw - 320px)/ 12) * 6) + 100px) + 20px)')};
-    height:100%;
+    height: 100%;
   `}
   ${MEDIA.MIN_TABLET`
   width: ${({ featured }) => (featured ? 'calc((((100vw - 320px)/ 12) * 6) + 100px)' : 'calc(((((100vw - 320px)/ 12) * 6) + 100px) + 20px)')};
@@ -48,6 +48,7 @@ export const ItemContainer = styled.article`
   ${MEDIA.MIN_PHONE`
   width: ${({ featured }) => (featured ? 'calc((((100vw - 320px)/ 12) * 6) + 100px)' : 'calc(((((100vw - 320px)/ 12) * 6) + 100px) + 20px)')};
   `}
+  
 `;
 
 export const GalButtons = styled.div`

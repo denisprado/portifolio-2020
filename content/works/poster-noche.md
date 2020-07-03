@@ -1,6 +1,6 @@
 ---
 path: noche
-collection: works
+collection: work
 title: "Poster Noche "
 date: 2020-06-04T15:40:18.336Z
 text: 'Poster for the film "Noche" (Night), by Alexis Delgado Búrdalo '

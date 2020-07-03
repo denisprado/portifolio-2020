@@ -162,3 +162,13 @@ module.exports = {
 ## Author
 
 * Fabian Schultz ([@fschultz_](https://twitter.com/fschultz_)) - [Stink Studios](https://stinkstudios.com)
+
+
+## todo
+
+[] mudar nome do template works para work
+[] criar o template works para listar todos os trabalhos, organizado por
+  [] all works
+  [] clients
+  [] disciplines
+[] criar templates para cada uma dessas organizações

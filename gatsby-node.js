@@ -24,7 +24,7 @@ exports.createPages = ({ actions, graphql }) => {
     {
       allMarkdownRemark(
         limit: 1000
-        filter: { frontmatter: { collection: { eq: "works" } } }
+        filter: { frontmatter: { collection: { eq: "work" } } }
       ) {
         nodes {
           fields {
@@ -46,10 +46,10 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors);
     }
 
-    const posts = result.data.allMarkdownRemark.nodes;
-    console.log(posts);
-    posts.forEach((edge) => {
+    const works = result.data.allMarkdownRemark.nodes;
+    works.forEach((edge) => {
       const id = edge.id;
+      const title = edge.frontmatter.title;
       createPage({
         path: edge.fields.slug,
         disciplines: edge.frontmatter.disciplines,
@@ -60,14 +60,15 @@ exports.createPages = ({ actions, graphql }) => {
         // additional data can be passed via context
         context: {
           id,
+          title,
         },
       });
     });
 
-    // Tag pages:
+    // Discipline pages:
     let disciplines = [];
     // Iterate through each post, putting all found discipline into `discipline`
-    posts.forEach((edge) => {
+    works.forEach((edge) => {
       if (_.get(edge, 'frontmatter.disciplines')) {
         disciplines = disciplines.concat(edge.frontmatter.disciplines);
       }
@@ -75,15 +76,15 @@ exports.createPages = ({ actions, graphql }) => {
     // Eliminate duplicate discipline
     disciplines = _.uniq(disciplines);
 
-    // Make tag pages
-    disciplines.forEach((tag) => {
-      const tagPath = `/disciplines/${_.kebabCase(tag)}/`;
+    // Make discipline pages
+    disciplines.forEach((discipline) => {
+      const tagPath = `/discipline/${_.kebabCase(discipline)}/`;
 
       createPage({
         path: tagPath,
-        component: path.resolve('src/templates/disciplines.js'),
+        component: path.resolve('src/templates/discipline.js'),
         context: {
-          tag,
+          discipline,
         },
       });
     });

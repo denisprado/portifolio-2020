@@ -6,7 +6,7 @@ const Nav = ({ inverse }) => (
   <Container>
     <ul>
       <li>
-        <Link to="/work">
+        <Link to="/works">
           <Text inverse={inverse}>Work</Text>
         </Link>
       </li>

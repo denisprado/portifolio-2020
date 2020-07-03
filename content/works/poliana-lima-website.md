@@ -1,6 +1,6 @@
 ---
 path: poliana-website
-collection: works
+collection: work
 title: Poliana Lima Website
 date: 2020-06-04T15:43:13.211Z
 text: Poliana Lima (Brasil, 1983) es coreógrafa, bailarina y docente, afincada

@@ -12,7 +12,7 @@ import {
   ItemContainer,
 } from './work.css';
 
-const Work = ({ items }) => {
+const Work = ({ items, grouped }) => {
   function arrayIntersect(array1, array2) {
     var arr_join = [],
       arr = array1.map((res, i) => {
@@ -35,32 +35,32 @@ const Work = ({ items }) => {
   return (
     <Container full={false}>
       <HomeWork>
-        {width >= BREAKPOINTS['DESKTOP']
+        {width >= BREAKPOINTS['DESKTOP'] && grouped
           ? rowItems.map((row, r) => (
-              <ContainerWorkRow key={r} right={r % 2 === 0 && true}>
-                {row.map((item, i) => (
-                  <ContainerWork key={i} right={r % 2 === 0 && true}>
-                    <ItemContainer
-                      featured={i === 0 && true}
-                      right={r % 2 === 0 && true}
-                    >
-                      {i === 0 ? (
-                        <Item {...item} featured={true} />
-                      ) : (
+            <ContainerWorkRow key={r} right={r % 2 === 0 && true}>
+              {row.map((item, i) => (
+                <ContainerWork key={i} right={r % 2 === 0 && true}>
+                  <ItemContainer
+                    featured={i === 0 && true}
+                    right={r % 2 === 0 && true}
+                  >
+                    {i === 0 ? (
+                      <Item {...item} featured={true} />
+                    ) : (
                         item.map((rItem, i) => (
                           <Item {...rItem} featured={false} key={i} />
                         ))
                       )}
-                    </ItemContainer>
-                  </ContainerWork>
-                ))}
-              </ContainerWorkRow>
-            ))
+                  </ItemContainer>
+                </ContainerWork>
+              ))}
+            </ContainerWorkRow>
+          ))
           : items.map((item, i) => (
-              <ItemContainer key={i}>
-                <Item {...item} />
-              </ItemContainer>
-            ))}
+            <ItemContainer key={i}>
+              <Item {...item} />
+            </ItemContainer>
+          ))}
       </HomeWork>
     </Container>
   );

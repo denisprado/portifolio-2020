@@ -7,7 +7,7 @@ import Nav from 'components/header/nav';
 import { HeaderContainer } from './header.css';
 
 const Header = ({ title, inverse }) => (
-  <Container>
+  <Container full={false}>
     <HeaderContainer>
       <Link to="/">
         <Title as="h1" color={'#e61428'} size={'logo'} fontType={'georgia'}>

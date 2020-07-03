@@ -11,9 +11,10 @@ export const HeaderContainer = styled.header`
   padding-top: 3rem;
   padding-right: 4rem;
   padding-left: 4rem;
+  
   ${MEDIA.MIN_LARGE`
-    padding-right: 5rem;
-    padding-left: 5rem;
+    padding-right: 15rem;
+    padding-left: 15rem;
   `}
   a {
     color: white;
