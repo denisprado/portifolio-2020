@@ -38,6 +38,7 @@ export const ItemContainer = styled.article`
   margin-left: ${({ right, featured }) => right ? '20px' : featured ? '40px' : '0px'};
   display: flex;
   flex-wrap: wrap;
+  
   ${MEDIA.MIN_DESKTOP`
     width: ${({ featured }) => (featured ? 'calc((((100vw - 320px)/ 12) * 6) + 100px)' : 'calc(((((100vw - 320px)/ 12) * 6) + 100px) + 20px)')};
     height: 100%;
@@ -48,7 +49,7 @@ export const ItemContainer = styled.article`
   ${MEDIA.MIN_PHONE`
   width: ${({ featured }) => (featured ? 'calc((((100vw - 320px)/ 12) * 6) + 100px)' : 'calc(((((100vw - 320px)/ 12) * 6) + 100px) + 20px)')};
   `}
-  
+  width: ${({ grouped }) => (grouped && 'calc((((100vw - 320px)/ 12) * 6) + 100px)')};
 `;
 
 export const GalButtons = styled.div`

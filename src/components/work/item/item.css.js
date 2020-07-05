@@ -4,31 +4,35 @@ import MEDIA from 'helpers/mediaTemplates';
 export const Container = styled.div`
   position: relative;
   display: block;
+  cursor: pointer;
   float: left;
   overflow: hidden;
-  width: ${(props) => (props.featured ? '740px' : '360px')};
+  width: ${({ featured, grouped }) => (!grouped && featured ? '740px' : '360px')};
+  
+  ${MEDIA.LARGE`
+    min-height: ${({ featured, grouped }) => (!grouped && featured ? '432px' : '100px')};
+    width: ${({ featured, grouped }) =>
+      !grouped && featured
+        ? 'calc((((100vw - 320px)/ 12) * 6) + 100px)'
+        : !grouped && 'calc((((100vw - 320px)/ 12) * 3) + 40px);'};
+  `}
+  ${MEDIA.DESKTOP`
+  background:red;
+
+    width: ${({ featured, grouped }) =>
+      !grouped && featured
+      && 'calc((((100vw - 300px)/ 12) * 6) + 100px)'};
+  `}
+  ${MEDIA.TABLET`
+    min-height: ${({ featured, grouped }) => (!grouped && featured ? '600px' : '300px')};
+    width: ${({ featured, grouped }) => (!grouped && featured ? '740px' : '360px')};
+    //border: 1px solid yellow;
+    `}
   ${MEDIA.PHONE`
     width: 90%;
   `}
-  ${MEDIA.MIN_TABLET`
-    width: calc((((100vw - 300px)/ 12) * 6) + 100px);
-    // border: 1px solid blue;
-  `}
-  ${MEDIA.MIN_DESKTOP`
-    min-height: ${(props) => (props.featured ? '432px' : '100px')};
-    width: ${(props) =>
-      props.featured
-        ? 'calc((((100vw - 320px)/ 12) * 6) + 100px)'
-        : 'calc((((100vw - 320px)/ 12) * 3) + 40px);'};
-    // border: 1px solid red;
-  `}
-  ${MEDIA.MIN_LARGE`
-    min-height: ${(props) => (props.featured ? '600px' : '300px')};
-    width: ${({ featured }) => (featured ? '740px' : '360px')};
-    //border: 1px solid yellow;
-`}
-  margin-left: ${(props) => !props.featured && '20px'};
-  cursor: pointer;
+  margin-left: ${({ featured }) => !featured && '20px'};
+  width: ${({ grouped }) => grouped && 'calc((((100vw - 320px)/ 12) * 2) + 40px)'};
 `;
 
 export const ContainerImage = styled.div`

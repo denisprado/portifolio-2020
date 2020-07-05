@@ -11,20 +11,17 @@ import kebabCase from 'lodash/kebabCase'
 
 
 const WorkType = ({ data: { allMarkdownRemark: { group } } }) => (
-    <div>
-        <h1>Disciplines</h1>
-        <ul>
-            {group.map((discipline, i) => (
-                <li key={i}>
-                    <Title>{discipline.fieldValue}</Title>
-                    <Text>({discipline.totalCount})</Text>
-                    <Work items={discipline.nodes} grouped={true}></Work>
-                </li>
-            )
-            )
-            }
-        </ul>
-    </div>
+    <ul>
+        {group.map((discipline, i) => (
+            <li key={i}>
+                <Title size={'medium'}>{discipline.fieldValue}</Title>
+                <Text>{String(discipline.totalCount)}</Text>
+                < Work items={discipline.nodes} grouped={false} />
+            </li>
+        )
+        )
+        }
+    </ul >
 )
 
 WorkType.propTypes = {
@@ -32,7 +29,7 @@ WorkType.propTypes = {
         allMarkdownRemark: PropTypes.shape({
             group: PropTypes.arrayOf(
                 PropTypes.shape({
-                    fieldValue: PropTypes.string.isRequired,
+                    fieldValue: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
                     totalCount: PropTypes.number.isRequired,
                 }).isRequired
             ),

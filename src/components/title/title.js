@@ -19,7 +19,7 @@ const Title = ({ children, as, size, color, fontType, inverse }) => {
 Title.propTypes = {
   children: PropTypes.string.isRequired,
   as: PropTypes.string,
-  size: PropTypes.oneOf(['large']),
+  size: PropTypes.oneOf(['large', 'medium', 'logo']),
 };
 
 export default Title;

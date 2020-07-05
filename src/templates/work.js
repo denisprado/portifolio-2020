@@ -17,8 +17,15 @@ class WorkRoute extends React.Component {
       <ContainerHeader>
         <div>
           <Title size={'large'}>{title}</Title>
-          <Text>{clients}</Text>
-          {disciplines.map(discipline => (<Link key={discipline} to={`/discipline/${_.kebabCase(discipline)}`}><Text >{discipline}</Text></Link>))}
+          <Link to={`/clients/${_.kebabCase(clients)}`}><Text>{clients}</Text></Link>
+          {disciplines.map(discipline =>
+            (
+              <Link key={discipline} to={`/discipline/${_.kebabCase(discipline)}`}>
+                <Text >{discipline}</Text>
+              </Link>
+            )
+          )
+          }
         </div>
         <Text size={'large'}>{text}</Text>
       </ContainerHeader >

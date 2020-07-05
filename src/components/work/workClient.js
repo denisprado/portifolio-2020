@@ -11,20 +11,17 @@ import kebabCase from 'lodash/kebabCase'
 
 
 const WorkClient = ({ data: { allMarkdownRemark: { group } } }) => (
-    <div>
-        <h1>Disciplines</h1>
-        <ul>
-            {group.map((clients, i) => (
-                <li key={i}>
-                    <Title>{clients.fieldValue}</Title>
-                    <Text>({clients.totalCount})</Text>
-                    <Work items={clients.nodes} grouped={true}></Work>
-                </li>
-            )
-            )
-            }
-        </ul>
-    </div>
+    <ul>
+        {group.map((clients, i) => (
+            <li key={i}>
+                <Title size={'medium'}>{clients.fieldValue}</Title>
+                <Text>({clients.totalCount})</Text>
+                <Work items={clients.nodes} grouped={false}></Work>
+            </li>
+        )
+        )
+        }
+    </ul>
 )
 
 WorkClient.propTypes = {

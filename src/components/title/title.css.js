@@ -34,6 +34,8 @@ export const Text = styled.h4`
       switch (size) {
         case 'large':
           return '2.6rem';
+        case 'medium':
+          return '2.2rem';
         default:
           return '2rem';
       }
