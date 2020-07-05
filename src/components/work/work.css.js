@@ -21,7 +21,7 @@ export const HomeWork = styled.div`
 
 export const ContainerWorkRow = styled.div`
   display: flex;
-  flex-direction: ${({ right }) => right ? 'row' : 'row-reverse'};
+  flex-direction: ${({ right }) => (right ? 'row' : 'row-reverse')};
   margin: 0 auto;
 `;
 
@@ -35,25 +35,33 @@ export const ContainerWork = styled.div`
 
 export const ItemContainer = styled.article`
   width: ${({ featured }) => (featured ? '740px' : '760px')};
-  margin-left: ${({ right, featured }) => right ? '20px' : featured ? '40px' : '0px'};
+  margin-left: ${({ right, featured }) =>
+    right ? '20px' : featured ? '40px' : '0px'};
   display: flex;
   flex-wrap: wrap;
-  
+
   ${MEDIA.MIN_DESKTOP`
-    width: ${({ featured }) => (featured ? 'calc((((100vw - 320px)/ 12) * 6) + 100px)' : 'calc(((((100vw - 320px)/ 12) * 6) + 100px) + 20px)')};
+    width: ${({ featured }) =>
+      featured
+        ? 'calc((((100vw - 320px)/ 12) * 6) + 100px)'
+        : 'calc(((((100vw - 320px)/ 12) * 6) + 100px) + 20px)'};
     height: 100%;
   `}
-  ${MEDIA.MIN_TABLET`
-  width: ${({ featured }) => (featured ? 'calc((((100vw - 320px)/ 12) * 6) + 100px)' : 'calc(((((100vw - 320px)/ 12) * 6) + 100px) + 20px)')};
-  `}
+
   ${MEDIA.MIN_PHONE`
-  width: ${({ featured }) => (featured ? 'calc((((100vw - 320px)/ 12) * 6) + 100px)' : 'calc(((((100vw - 320px)/ 12) * 6) + 100px) + 20px)')};
+  width: ${({ featured, grouped }) =>
+    featured
+      ? 'calc((((100vw - 320px)/ 12) * 6) + 100px)'
+      : grouped
+      ? 'calc(((((100vw - 320px)/ 12) * 6) + 100px) + 20px)'
+      : '360px'};
   `}
-  width: ${({ grouped }) => (grouped && 'calc((((100vw - 320px)/ 12) * 6) + 100px)')};
+  width: ${({ grouped }) =>
+    grouped && 'calc((((100vw - 320px)/ 12) * 2) + 100px)'};
 `;
 
 export const GalButtons = styled.div`
-position: fixed;
-top: 40rem;
-left: 40rem;
+  position: fixed;
+  top: 40rem;
+  left: 40rem;
 `;

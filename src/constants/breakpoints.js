@@ -1,6 +1,6 @@
 export default {
-  LARGE: 1600,
-  DESKTOP: 1040,
-  TABLET: 800,
-  PHONE: 600,
+  LARGE: 1600, //100em
+  DESKTOP: 1040, //65em
+  TABLET: 800, //50em
+  PHONE: 600, //37,5em
 };

@@ -5,8 +5,8 @@ import Title from 'components/title';
 import Container from 'components/container';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
-import WorkType from 'components/work/workType'
-import WorkClient from 'components/work/workClient'
+import WorkType from 'components/work/workType';
+import WorkClient from 'components/work/workClient';
 import styled from 'styled-components';
 
 const Header = styled.div`
@@ -14,11 +14,11 @@ const Header = styled.div`
   justify-content: space-between;
   margin: 15rem 15rem 0;
   border-bottom: 1px solid black;
-`
+`;
 const Body = styled.div`
   display: flex;
   margin: 0rem 7rem 0;
-`
+`;
 
 const WorkPage = ({ data }) => {
   const [activeTab, setActiveTab] = useState(0);
@@ -36,7 +36,9 @@ const WorkPage = ({ data }) => {
         <Body>
           {activeTab === 0 && <WorkType />}
           {activeTab === 1 && <WorkClient />}
-          {activeTab === 2 && <Work items={data.allMarkdownRemark.nodes} grouped={false} />}
+          {activeTab === 2 && (
+            <Work items={data.allMarkdownRemark.nodes} grouped={false} />
+          )}
         </Body>
       </Container>
     </Layout>

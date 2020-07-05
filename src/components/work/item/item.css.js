@@ -7,32 +7,34 @@ export const Container = styled.div`
   cursor: pointer;
   float: left;
   overflow: hidden;
-  width: ${({ featured, grouped }) => (!grouped && featured ? '740px' : '360px')};
-  
+  width: ${({ featured, grouped }) =>
+    !grouped && featured ? '740px' : '360px'};
+
   ${MEDIA.LARGE`
-    min-height: ${({ featured, grouped }) => (!grouped && featured ? '432px' : '100px')};
+    min-height: ${({ featured, grouped }) =>
+      !grouped && featured ? '432px' : '100px'};
     width: ${({ featured, grouped }) =>
       !grouped && featured
         ? 'calc((((100vw - 320px)/ 12) * 6) + 100px)'
         : !grouped && 'calc((((100vw - 320px)/ 12) * 3) + 40px);'};
   `}
   ${MEDIA.DESKTOP`
-  background:red;
-
-    width: ${({ featured, grouped }) =>
-      !grouped && featured
-      && 'calc((((100vw - 300px)/ 12) * 6) + 100px)'};
+  width: ${({ featured, grouped }) =>
+    !grouped && featured
+      ? 'calc((((100vw - 320px)/ 12) * 6) + 100px)'
+      : !grouped && 'calc((((100vw - 320px)/ 12) * 6) + 40px);'};
   `}
   ${MEDIA.TABLET`
-    min-height: ${({ featured, grouped }) => (!grouped && featured ? '600px' : '300px')};
-    width: ${({ featured, grouped }) => (!grouped && featured ? '740px' : '360px')};
-    //border: 1px solid yellow;
+    min-height: ${({ featured, grouped }) =>
+      !grouped && featured ? '600px' : '300px'};
+    width: ${({ featured, grouped }) =>
+      !grouped && featured ? '740px' : '360px'};
     `}
   ${MEDIA.PHONE`
-    width: 90%;
-  `}
+    width: ${({ grouped }) =>
+      !grouped ? '90%' : 'calc((((100vw - 320px)/ 12) * 2) + 40px)'};
+    `}
   margin-left: ${({ featured }) => !featured && '20px'};
-  width: ${({ grouped }) => grouped && 'calc((((100vw - 320px)/ 12) * 2) + 40px)'};
 `;
 
 export const ContainerImage = styled.div`
