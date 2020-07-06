@@ -1,26 +1,16 @@
-import Text from 'components/text';
-import Title from 'components/title';
-import Work from 'components/work';
 import { graphql, StaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
-// Components
+import OrganizedWork from './organizedWork'
+
 
 const WorkClient = ({
   data: {
     allMarkdownRemark: { group },
   },
 }) => (
-  <ul>
-    {group.map((clients, i) => (
-      <li key={i}>
-        <Title size={'medium'}>{clients.fieldValue}</Title>
-        <Text>({clients.totalCount})</Text>
-        <Work items={clients.nodes} grouped={false}></Work>
-      </li>
-    ))}
-  </ul>
-);
+    <OrganizedWork group={group} />
+  );
 
 WorkClient.propTypes = {
   data: PropTypes.shape({

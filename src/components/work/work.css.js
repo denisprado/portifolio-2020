@@ -2,27 +2,19 @@ import styled from 'styled-components';
 import MEDIA from 'helpers/mediaTemplates';
 
 export const HomeWork = styled.div`
-  padding-top: 80px;
-  width: 100vw;
-  padding-right: 4rem;
-  padding-left: 4rem;
-  min-height: 100vh;
+  width: 100%;
   position: relative;
   z-index: 0;
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  ${MEDIA.MIN_LARGE`
-    padding-right: 5rem;
-    padding-left: 5rem;
-  `}
 `;
 
 export const ContainerWorkRow = styled.div`
   display: flex;
   flex-direction: ${({ right }) => (right ? 'row' : 'row-reverse')};
-  margin: 0 auto;
+  margin: 0 auto; /* centraliza a linha dos trabalhos */
 `;
 
 export const ContainerWork = styled.div`
@@ -45,19 +37,23 @@ export const ItemContainer = styled.article`
       featured
         ? 'calc((((100vw - 320px)/ 12) * 6) + 100px)'
         : 'calc(((((100vw - 320px)/ 12) * 6) + 100px) + 20px)'};
-    height: 100%;
-  `}
+    height:${({ grouped }) => !grouped && '100%'};
+`}
 
   ${MEDIA.MIN_PHONE`
+  
   width: ${({ featured, grouped }) =>
-    featured
-      ? 'calc((((100vw - 320px)/ 12) * 6) + 100px)'
-      : grouped
-      ? 'calc(((((100vw - 320px)/ 12) * 6) + 100px) + 20px)'
-      : '360px'};
-  `}
-  width: ${({ grouped }) =>
-    grouped && 'calc((((100vw - 320px)/ 12) * 2) + 100px)'};
+      (featured && grouped)
+        ? 'calc((((100vw - 320px)/ 12) * 6) + 100px)' // index page featured item
+        : (!featured && grouped) ? // index page not featured item
+          'calc(((((100vw - 320px)/ 12) * 6) + 100px) + 20px)' :
+          (!featured && !grouped) && //works page not featured
+          'calc((((100vw - 320px)/ 12) * 2) + 100px)'
+    };
+height:${({ grouped }) => !grouped && '100%'};  
+
+`}
+  
 `;
 
 export const GalButtons = styled.div`

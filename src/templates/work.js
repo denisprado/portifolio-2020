@@ -5,6 +5,7 @@ import Layout from 'components/layout';
 import Title from 'components/title';
 import Text from 'components/text';
 import Container from 'components/container';
+import Section from 'components/section';
 import { ContainerHeader, ContainerBody } from './templates.css';
 const _ = require('lodash');
 class WorkRoute extends React.Component {
@@ -41,8 +42,10 @@ class WorkRoute extends React.Component {
       <Layout>
         <Helmet title={`${title}`} />
         <Container>
-          <Header />
-          <Body />
+          <Section>
+            <Header />
+            <Body />
+          </Section>
         </Container>
       </Layout>
     );

@@ -16,6 +16,7 @@ export const HeaderContainer = styled.header`
     padding-right: 15rem;
     padding-left: 15rem;
   `}
+  
   a {
     color: white;
     transition: color 0.2s ease;

@@ -2,18 +2,25 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from 'components/layout';
 import Work from 'components/work';
+import Container from 'components/container';
+import Section from 'components/section';
 import Title from 'components/title';
 import { ContainerHeader, ContainerBody } from './templates.css';
 
 const DisciplineRoute = ({ pageContext, data }) => {
   return (
     <Layout inverse>
-      <ContainerHeader>
-        <Title size={'large'}>{pageContext.discipline}</Title>
-      </ContainerHeader>
-      <ContainerBody>
-        <Work items={data.allMarkdownRemark.nodes} grouped={false} />
-      </ContainerBody>
+      <Container>
+
+        <Section>
+          <ContainerHeader>
+            <Title size={'large'}>{pageContext.discipline}</Title>
+          </ContainerHeader>
+          <ContainerBody>
+            <Work items={data.allMarkdownRemark.nodes} grouped={false} />
+          </ContainerBody>
+        </Section>
+      </Container>
     </Layout>
   );
 }
